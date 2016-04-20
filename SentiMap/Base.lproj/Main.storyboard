@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Odin Rounded.otf">
+            <string>OdinRounded</string>
+            <string>OdinRounded</string>
+            <string>OdinRounded</string>
+            <string>OdinRounded</string>
+            <string>OdinRounded</string>
+            <string>OdinRounded</string>
+            <string>OdinRounded</string>
+            <string>OdinRounded</string>
+            <string>OdinRounded</string>
+            <string>OdinRounded</string>
+            <string>OdinRounded</string>
+            <string>OdinRounded</string>
+            <string>OdinRounded</string>
+            <string>OdinRounded</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Wheel View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SMWheelViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="i'm in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OV-it-pab">
+                                <rect key="frame" x="259" y="83" width="52" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="65o-XI-Bkd">
+                                        <variation key="widthClass=compact" constant="23"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="45" id="MgE-NR-QfJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="22"/>
+                                <color key="textColor" red="0.3411764705882353" green="0.34509803921568627" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="65o-XI-Bkd"/>
+                                        <exclude reference="MgE-NR-QfJ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="65o-XI-Bkd"/>
+                                        <include reference="MgE-NR-QfJ"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="and i'm feeling" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCZ-RI-ahr">
+                                <rect key="frame" x="200" y="112" width="111" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="QOw-ih-RDb"/>
+                                    <constraint firstAttribute="height" constant="22" id="Xcr-3J-QrB">
+                                        <variation key="widthClass=compact" constant="23"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="22"/>
+                                <color key="textColor" red="0.3411764705882353" green="0.34509803921568627" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QOw-ih-RDb"/>
+                                        <exclude reference="Xcr-3J-QrB"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="QOw-ih-RDb"/>
+                                        <include reference="Xcr-3J-QrB"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ar-CL-rVM" userLabel="city">
+                                <rect key="frame" x="259" y="83" width="52" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="9sZ-4x-wU1"/>
+                                    <constraint firstAttribute="height" constant="22" id="HAC-jB-OL0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="22"/>
+                                <color key="textColor" red="0.3411764706" green="0.34509803919999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9sZ-4x-wU1"/>
+                                        <exclude reference="HAC-jB-OL0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="9sZ-4x-wU1"/>
+                                        <include reference="HAC-jB-OL0"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uc-Hd-dAm" userLabel="mood">
+                                <rect key="frame" x="200" y="112" width="111" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="UFo-KK-ZPD"/>
+                                    <constraint firstAttribute="width" constant="15" id="Uv4-wH-aQn">
+                                        <variation key="widthClass=compact" constant="105"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="22"/>
+                                <color key="textColor" red="0.3411764706" green="0.34509803919999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UFo-KK-ZPD"/>
+                                        <exclude reference="Uv4-wH-aQn"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="UFo-KK-ZPD"/>
+                                        <include reference="Uv4-wH-aQn"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0aB-lE-Bfm" userLabel="wheel container">
+                                <rect key="frame" x="0.0" y="146" width="320" height="320"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wheel.png" translatesAutoresizingMaskIntoConstraints="NO" id="edd-td-mc9" userLabel="wheel">
+                                        <rect key="frame" x="35" y="35" width="250" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="QHr-BF-2y8"/>
+                                            <constraint firstAttribute="width" constant="250" id="q4J-SW-9Er"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wheelGlow.png" translatesAutoresizingMaskIntoConstraints="NO" id="epD-oI-yZ9" userLabel="wheel glow.png">
+                                        <rect key="frame" x="3" y="3" width="314" height="314"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joy.png" translatesAutoresizingMaskIntoConstraints="NO" id="1xb-sL-Akk" userLabel="mood color.png">
+                                        <rect key="frame" x="85" y="85" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="DlH-Ix-xyf"/>
+                                            <constraint firstAttribute="height" constant="150" id="zhj-Nf-fJ9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="layer.cornerRadius" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxW-wL-kqX" userLabel="mood pos exposer">
+                                        <rect key="frame" x="85" y="85" width="150" height="150"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="400"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="moodPosHide:" destination="BYZ-38-t0r" eventType="touchCancel" id="6bM-l4-N7x"/>
+                                            <action selector="moodPosShow:" destination="BYZ-38-t0r" eventType="touchDown" id="H32-zn-9hT"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="teo-KT-Om9" userLabel="mood poses">
+                                        <rect key="frame" x="3" y="3" width="314" height="314"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JOY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPw-OO-Shq">
+                                                <rect key="frame" x="207" y="27" width="13" height="8"/>
+                                                <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="197" y="28" width="40" height="8"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SAD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdi-Ka-ode">
+                                                <rect key="frame" x="19" y="102" width="15" height="8"/>
+                                                <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="3" y="102" width="40" height="8"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ANGRY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="En1-gs-vFL">
+                                                <rect key="frame" x="201" y="283" width="25" height="8"/>
+                                                <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="197" y="285" width="40" height="8"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SCARED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udo-zq-OmV">
+                                                <rect key="frame" x="6" y="207" width="28" height="8"/>
+                                                <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="-5" y="207" width="40" height="8"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EXCITED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJW-HN-VX8">
+                                                <rect key="frame" x="83" y="27" width="29" height="8"/>
+                                                <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="73" y="28" width="40" height="8"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TIRED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sau-YQ-tx8">
+                                                <rect key="frame" x="278" y="102" width="20" height="8"/>
+                                                <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="270" y="102" width="40" height="8"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FUN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNz-PZ-3LQ">
+                                                <rect key="frame" x="279" y="207" width="14" height="8"/>
+                                                <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="270" y="207" width="40" height="8"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SURPRISED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqT-Du-rMu">
+                                                <rect key="frame" x="75" y="283" width="37" height="8"/>
+                                                <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="59" y="285" width="67" height="8"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1xb-sL-Akk" firstAttribute="centerX" secondItem="edd-td-mc9" secondAttribute="centerX" id="85N-F4-htu"/>
+                                    <constraint firstItem="epD-oI-yZ9" firstAttribute="width" secondItem="edd-td-mc9" secondAttribute="width" constant="64" id="8Gh-6a-avG"/>
+                                    <constraint firstItem="ZxW-wL-kqX" firstAttribute="height" secondItem="1xb-sL-Akk" secondAttribute="height" id="Abh-j1-5sN"/>
+                                    <constraint firstAttribute="height" constant="320" id="GV7-wx-yFO"/>
+                                    <constraint firstItem="edd-td-mc9" firstAttribute="centerX" secondItem="0aB-lE-Bfm" secondAttribute="centerX" id="JoE-WZ-VNU"/>
+                                    <constraint firstItem="ZxW-wL-kqX" firstAttribute="centerY" secondItem="1xb-sL-Akk" secondAttribute="centerY" id="OZv-nw-dLO"/>
+                                    <constraint firstAttribute="width" constant="320" id="PEd-pc-n5o"/>
+                                    <constraint firstItem="1xb-sL-Akk" firstAttribute="centerY" secondItem="edd-td-mc9" secondAttribute="centerY" id="Q4m-2G-VsC"/>
+                                    <constraint firstItem="epD-oI-yZ9" firstAttribute="centerX" secondItem="0aB-lE-Bfm" secondAttribute="centerX" id="Qwl-hs-zsB"/>
+                                    <constraint firstItem="epD-oI-yZ9" firstAttribute="height" secondItem="edd-td-mc9" secondAttribute="height" constant="64" id="UDS-xE-JHt"/>
+                                    <constraint firstItem="epD-oI-yZ9" firstAttribute="centerY" secondItem="0aB-lE-Bfm" secondAttribute="centerY" id="a2J-t9-IKi"/>
+                                    <constraint firstItem="ZxW-wL-kqX" firstAttribute="centerX" secondItem="1xb-sL-Akk" secondAttribute="centerX" id="ir7-p4-tFs"/>
+                                    <constraint firstItem="ZxW-wL-kqX" firstAttribute="width" secondItem="1xb-sL-Akk" secondAttribute="width" id="k0M-mz-d7h"/>
+                                    <constraint firstItem="edd-td-mc9" firstAttribute="centerY" secondItem="0aB-lE-Bfm" secondAttribute="centerY" id="t9L-US-XLD"/>
+                                </constraints>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="140" y="262" width="320" height="320"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tC-sc-cIw" userLabel="done button">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHv-W2-a6N">
+                                        <rect key="frame" x="132" y="483" width="58" height="35"/>
+                                        <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="23"/>
+                                        <state key="normal" title="DONE">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <variation key="heightClass=regular" misplaced="YES">
+                                            <rect key="frame" x="272" y="590" width="58" height="35"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="done:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oI5-Na-H8o"/>
+                                            <action selector="moodPosShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JUH-qo-J1S"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP0-Cm-fJg">
+                                        <rect key="frame" x="102" y="484" width="30" height="35"/>
+                                        <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="23"/>
+                                        <state key="normal" title="&gt;">
+                                            <color key="titleColor" red="0.90980392160000001" green="0.25490196079999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <variation key="heightClass=regular" misplaced="YES">
+                                            <rect key="frame" x="242" y="591" width="30" height="35"/>
+                                        </variation>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JHv-W2-a6N" firstAttribute="leading" secondItem="OP0-Cm-fJg" secondAttribute="trailing" constant="-2" id="6Fa-nR-BVb">
+                                        <variation key="widthClass=compact" constant="2"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="48" id="73E-hk-8d1"/>
+                                    <constraint firstItem="JHv-W2-a6N" firstAttribute="centerY" secondItem="2tC-sc-cIw" secondAttribute="centerY" id="My0-Pe-Ng0"/>
+                                    <constraint firstItem="OP0-Cm-fJg" firstAttribute="centerY" secondItem="2tC-sc-cIw" secondAttribute="centerY" id="gI0-ff-Ssd"/>
+                                    <constraint firstAttribute="width" constant="128" id="xLL-ae-TsF"/>
+                                    <constraint firstItem="JHv-W2-a6N" firstAttribute="centerX" secondItem="2tC-sc-cIw" secondAttribute="centerX" id="zbB-jz-qUM"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="JHv-W2-a6N"/>
+                                        <exclude reference="OP0-Cm-fJg"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="73E-hk-8d1"/>
+                                        <exclude reference="xLL-ae-TsF"/>
+                                        <exclude reference="gI0-ff-Ssd"/>
+                                        <exclude reference="6Fa-nR-BVb"/>
+                                        <exclude reference="My0-Pe-Ng0"/>
+                                        <exclude reference="zbB-jz-qUM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="JHv-W2-a6N"/>
+                                        <include reference="OP0-Cm-fJg"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="73E-hk-8d1"/>
+                                        <include reference="xLL-ae-TsF"/>
+                                        <include reference="gI0-ff-Ssd"/>
+                                        <include reference="6Fa-nR-BVb"/>
+                                        <include reference="My0-Pe-Ng0"/>
+                                        <include reference="zbB-jz-qUM"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxn-7m-3ID" userLabel="middle guide line">
+                                <rect key="frame" x="160" y="284" width="0.0" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="6N9-Fq-yIw"/>
+                                    <constraint firstAttribute="height" id="OIe-WO-bmQ"/>
+                                </constraints>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="300" y="400" width="0.0" height="0.0"/>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.040640612946282434" green="0.021622559573405795" blue="0.14964414267015702" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Ar-CL-rVM" firstAttribute="leading" secondItem="8OV-it-pab" secondAttribute="trailing" constant="15" id="1AZ-HF-Rfp">
+                                <variation key="widthClass=compact" constant="6"/>
+                            </constraint>
+                            <constraint firstItem="2tC-sc-cIw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Jx-2m-tb7"/>
+                            <constraint firstItem="8uc-Hd-dAm" firstAttribute="top" secondItem="1Ar-CL-rVM" secondAttribute="bottom" constant="3" id="8XV-7k-bg2">
+                                <variation key="widthClass=compact" constant="7"/>
+                            </constraint>
+                            <constraint firstItem="nCZ-RI-ahr" firstAttribute="top" secondItem="1Ar-CL-rVM" secondAttribute="bottom" constant="3" id="GIm-4I-E0S">
+                                <variation key="widthClass=compact" constant="6"/>
+                            </constraint>
+                            <constraint firstItem="0aB-lE-Bfm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LWI-rZ-gB3"/>
+                            <constraint firstItem="2tC-sc-cIw" firstAttribute="top" secondItem="0aB-lE-Bfm" secondAttribute="bottom" constant="32" id="NkH-RT-gvf">
+                                <variation key="widthClass=compact" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="0aB-lE-Bfm" firstAttribute="leading" secondItem="8OV-it-pab" secondAttribute="trailing" constant="-102" id="Oaz-8l-jVZ">
+                                <variation key="widthClass=compact" constant="-104"/>
+                            </constraint>
+                            <constraint firstItem="8uc-Hd-dAm" firstAttribute="leading" secondItem="nCZ-RI-ahr" secondAttribute="trailing" constant="8" id="SY7-uw-yaA">
+                                <variation key="widthClass=compact" constant="6"/>
+                            </constraint>
+                            <constraint firstItem="kxn-7m-3ID" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZWg-Ek-r7j"/>
+                            <constraint firstItem="0aB-lE-Bfm" firstAttribute="top" secondItem="kxn-7m-3ID" secondAttribute="bottom" constant="-160" id="dQk-Ct-ZR9">
+                                <variation key="widthClass=compact" constant="-138"/>
+                            </constraint>
+                            <constraint firstItem="kxn-7m-3ID" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e2r-qm-zXw"/>
+                            <constraint firstItem="kxn-7m-3ID" firstAttribute="top" secondItem="8OV-it-pab" secondAttribute="bottom" constant="220" id="eSG-cq-uTo">
+                                <variation key="widthClass=compact" constant="203"/>
+                            </constraint>
+                            <constraint firstItem="kxn-7m-3ID" firstAttribute="top" secondItem="1Ar-CL-rVM" secondAttribute="bottom" constant="177" id="saq-xO-qyE">
+                                <variation key="widthClass=compact" constant="203"/>
+                            </constraint>
+                            <constraint firstItem="8uc-Hd-dAm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="znU-u1-Eai">
+                                <variation key="widthClass=compact" constant="91.5"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1Ar-CL-rVM"/>
+                                <exclude reference="8uc-Hd-dAm"/>
+                                <exclude reference="0aB-lE-Bfm"/>
+                                <exclude reference="2tC-sc-cIw"/>
+                                <exclude reference="kxn-7m-3ID"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="GIm-4I-E0S"/>
+                                <exclude reference="LWI-rZ-gB3"/>
+                                <exclude reference="Oaz-8l-jVZ"/>
+                                <exclude reference="dQk-Ct-ZR9"/>
+                                <exclude reference="1AZ-HF-Rfp"/>
+                                <exclude reference="8XV-7k-bg2"/>
+                                <exclude reference="SY7-uw-yaA"/>
+                                <exclude reference="znU-u1-Eai"/>
+                                <exclude reference="ZWg-Ek-r7j"/>
+                                <exclude reference="e2r-qm-zXw"/>
+                                <exclude reference="eSG-cq-uTo"/>
+                                <exclude reference="saq-xO-qyE"/>
+                                <exclude reference="1Jx-2m-tb7"/>
+                                <exclude reference="NkH-RT-gvf"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="1Ar-CL-rVM"/>
+                                <include reference="8uc-Hd-dAm"/>
+                                <include reference="0aB-lE-Bfm"/>
+                                <include reference="2tC-sc-cIw"/>
+                                <include reference="kxn-7m-3ID"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="GIm-4I-E0S"/>
+                                <include reference="LWI-rZ-gB3"/>
+                                <include reference="Oaz-8l-jVZ"/>
+                                <include reference="dQk-Ct-ZR9"/>
+                                <include reference="1AZ-HF-Rfp"/>
+                                <include reference="8XV-7k-bg2"/>
+                                <include reference="SY7-uw-yaA"/>
+                                <include reference="znU-u1-Eai"/>
+                                <include reference="ZWg-Ek-r7j"/>
+                                <include reference="e2r-qm-zXw"/>
+                                <include reference="eSG-cq-uTo"/>
+                                <include reference="saq-xO-qyE"/>
+                                <include reference="1Jx-2m-tb7"/>
+                                <include reference="NkH-RT-gvf"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="1Ar-CL-rVM" id="kV1-dn-uyi"/>
+                        <outlet property="doneButton" destination="2tC-sc-cIw" id="Are-mU-9pw"/>
+                        <outlet property="moodColor" destination="1xb-sL-Akk" id="OVB-3W-7zF"/>
+                        <outlet property="moodLabel" destination="8uc-Hd-dAm" id="hBP-QY-C8n"/>
+                        <outlet property="moodPosExposer" destination="ZxW-wL-kqX" id="E55-tn-EWJ"/>
+                        <outlet property="moodPoses" destination="teo-KT-Om9" id="c9d-KF-bMh"/>
+                        <outlet property="wheel" destination="edd-td-mc9" id="niW-7x-TRB"/>
+                        <outlet property="wheelContainer" destination="0aB-lE-Bfm" id="eRc-D4-VIV"/>
+                        <outlet property="wheelGlow" destination="epD-oI-yZ9" id="iU9-Kc-sY1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753" y="616"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="joy.png" width="267" height="265"/>
+        <image name="wheel.png" width="629" height="629"/>
+        <image name="wheelGlow.png" width="400" height="400"/>
+    </resources>
+</document>

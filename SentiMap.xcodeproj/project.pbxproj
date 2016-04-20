@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E916537C1CC7761B00861DE0 /* SMWheelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E916537B1CC7761B00861DE0 /* SMWheelViewController.m */; };
+		E916538A1CC77ACC00861DE0 /* angry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91653801CC77ACC00861DE0 /* angry@2x.png */; };
+		E916538B1CC77ACC00861DE0 /* excited@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91653811CC77ACC00861DE0 /* excited@2x.png */; };
+		E916538C1CC77ACC00861DE0 /* fun@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91653821CC77ACC00861DE0 /* fun@2x.png */; };
+		E916538D1CC77ACC00861DE0 /* sad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91653831CC77ACC00861DE0 /* sad@2x.png */; };
+		E916538E1CC77ACC00861DE0 /* surprised@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91653841CC77ACC00861DE0 /* surprised@2x.png */; };
+		E916538F1CC77ACC00861DE0 /* joy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91653851CC77ACC00861DE0 /* joy@2x.png */; };
+		E91653901CC77ACC00861DE0 /* scared@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91653861CC77ACC00861DE0 /* scared@2x.png */; };
+		E91653911CC77ACC00861DE0 /* tired@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91653871CC77ACC00861DE0 /* tired@2x.png */; };
+		E91653921CC77ACC00861DE0 /* wheelGlow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91653881CC77ACC00861DE0 /* wheelGlow@2x.png */; };
+		E91653931CC77ACC00861DE0 /* wheel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91653891CC77ACC00861DE0 /* wheel@2x.png */; };
+		E91653951CC781F600861DE0 /* Odin Rounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = E91653941CC781EB00861DE0 /* Odin Rounded.otf */; };
+		E916539B1CC7B14B00861DE0 /* SMWheelGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = E916539A1CC7B14B00861DE0 /* SMWheelGestureRecognizer.m */; };
+		E916539E1CC7B16D00861DE0 /* SMTouchDownGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = E916539D1CC7B16D00861DE0 /* SMTouchDownGestureRecognizer.m */; };
+		E91653A11CC7B17D00861DE0 /* SMTouchUpGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = E91653A01CC7B17D00861DE0 /* SMTouchUpGestureRecognizer.m */; };
+		E987B6561CC6B69200C107E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E987B6551CC6B69200C107E3 /* main.m */; };
+		E987B6591CC6B69200C107E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E987B6581CC6B69200C107E3 /* AppDelegate.m */; };
+		E987B65F1CC6B69200C107E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E987B65D1CC6B69200C107E3 /* Main.storyboard */; };
+		E987B6611CC6B69200C107E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E987B6601CC6B69200C107E3 /* Assets.xcassets */; };
+		E987B6641CC6B69200C107E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E987B6621CC6B69200C107E3 /* LaunchScreen.storyboard */; };
+		E987B66F1CC6B69200C107E3 /* SentiMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E987B66E1CC6B69200C107E3 /* SentiMapTests.m */; };
+		E987B67A1CC6B69200C107E3 /* SentiMapUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E987B6791CC6B69200C107E3 /* SentiMapUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E987B66B1CC6B69200C107E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E987B6491CC6B69200C107E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E987B6501CC6B69200C107E3;
+			remoteInfo = SentiMap;
+		};
+		E987B6761CC6B69200C107E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E987B6491CC6B69200C107E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E987B6501CC6B69200C107E3;
+			remoteInfo = SentiMap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E916537A1CC7761B00861DE0 /* SMWheelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWheelViewController.h; sourceTree = "<group>"; };
+		E916537B1CC7761B00861DE0 /* SMWheelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWheelViewController.m; sourceTree = "<group>"; };
+		E91653801CC77ACC00861DE0 /* angry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angry@2x.png"; sourceTree = "<group>"; };
+		E91653811CC77ACC00861DE0 /* excited@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "excited@2x.png"; sourceTree = "<group>"; };
+		E91653821CC77ACC00861DE0 /* fun@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fun@2x.png"; sourceTree = "<group>"; };
+		E91653831CC77ACC00861DE0 /* sad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sad@2x.png"; sourceTree = "<group>"; };
+		E91653841CC77ACC00861DE0 /* surprised@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "surprised@2x.png"; sourceTree = "<group>"; };
+		E91653851CC77ACC00861DE0 /* joy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "joy@2x.png"; sourceTree = "<group>"; };
+		E91653861CC77ACC00861DE0 /* scared@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scared@2x.png"; sourceTree = "<group>"; };
+		E91653871CC77ACC00861DE0 /* tired@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tired@2x.png"; sourceTree = "<group>"; };
+		E91653881CC77ACC00861DE0 /* wheelGlow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wheelGlow@2x.png"; sourceTree = "<group>"; };
+		E91653891CC77ACC00861DE0 /* wheel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wheel@2x.png"; sourceTree = "<group>"; };
+		E91653941CC781EB00861DE0 /* Odin Rounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Odin Rounded.otf"; sourceTree = "<group>"; };
+		E91653991CC7B14B00861DE0 /* SMWheelGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWheelGestureRecognizer.h; sourceTree = "<group>"; };
+		E916539A1CC7B14B00861DE0 /* SMWheelGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWheelGestureRecognizer.m; sourceTree = "<group>"; };
+		E916539C1CC7B16D00861DE0 /* SMTouchDownGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTouchDownGestureRecognizer.h; sourceTree = "<group>"; };
+		E916539D1CC7B16D00861DE0 /* SMTouchDownGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTouchDownGestureRecognizer.m; sourceTree = "<group>"; };
+		E916539F1CC7B17D00861DE0 /* SMTouchUpGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTouchUpGestureRecognizer.h; sourceTree = "<group>"; };
+		E91653A01CC7B17D00861DE0 /* SMTouchUpGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTouchUpGestureRecognizer.m; sourceTree = "<group>"; };
+		E987B6511CC6B69200C107E3 /* SentiMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SentiMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E987B6551CC6B69200C107E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E987B6571CC6B69200C107E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E987B6581CC6B69200C107E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E987B65E1CC6B69200C107E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E987B6601CC6B69200C107E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E987B6631CC6B69200C107E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E987B6651CC6B69200C107E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E987B66A1CC6B69200C107E3 /* SentiMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SentiMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E987B66E1CC6B69200C107E3 /* SentiMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SentiMapTests.m; sourceTree = "<group>"; };
+		E987B6701CC6B69200C107E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E987B6751CC6B69200C107E3 /* SentiMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SentiMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E987B6791CC6B69200C107E3 /* SentiMapUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SentiMapUITests.m; sourceTree = "<group>"; };
+		E987B67B1CC6B69200C107E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E987B64E1CC6B69200C107E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E987B6671CC6B69200C107E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E987B6721CC6B69200C107E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E916537D1CC7762D00861DE0 /* Wheel View */ = {
+			isa = PBXGroup;
+			children = (
+				E916537A1CC7761B00861DE0 /* SMWheelViewController.h */,
+				E916537B1CC7761B00861DE0 /* SMWheelViewController.m */,
+				E91653991CC7B14B00861DE0 /* SMWheelGestureRecognizer.h */,
+				E916539A1CC7B14B00861DE0 /* SMWheelGestureRecognizer.m */,
+				E916539F1CC7B17D00861DE0 /* SMTouchUpGestureRecognizer.h */,
+				E91653A01CC7B17D00861DE0 /* SMTouchUpGestureRecognizer.m */,
+				E916539C1CC7B16D00861DE0 /* SMTouchDownGestureRecognizer.h */,
+				E916539D1CC7B16D00861DE0 /* SMTouchDownGestureRecognizer.m */,
+			);
+			name = "Wheel View";
+			sourceTree = "<group>";
+		};
+		E916537F1CC77AAE00861DE0 /* Image Files */ = {
+			isa = PBXGroup;
+			children = (
+				E91653801CC77ACC00861DE0 /* angry@2x.png */,
+				E91653811CC77ACC00861DE0 /* excited@2x.png */,
+				E91653821CC77ACC00861DE0 /* fun@2x.png */,
+				E91653831CC77ACC00861DE0 /* sad@2x.png */,
+				E91653841CC77ACC00861DE0 /* surprised@2x.png */,
+				E91653851CC77ACC00861DE0 /* joy@2x.png */,
+				E91653861CC77ACC00861DE0 /* scared@2x.png */,
+				E91653871CC77ACC00861DE0 /* tired@2x.png */,
+				E91653881CC77ACC00861DE0 /* wheelGlow@2x.png */,
+				E91653891CC77ACC00861DE0 /* wheel@2x.png */,
+			);
+			name = "Image Files";
+			sourceTree = "<group>";
+		};
+		E987B6481CC6B69200C107E3 = {
+			isa = PBXGroup;
+			children = (
+				E987B6531CC6B69200C107E3 /* SentiMap */,
+				E987B66D1CC6B69200C107E3 /* SentiMapTests */,
+				E987B6781CC6B69200C107E3 /* SentiMapUITests */,
+				E987B6521CC6B69200C107E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E987B6521CC6B69200C107E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E987B6511CC6B69200C107E3 /* SentiMap.app */,
+				E987B66A1CC6B69200C107E3 /* SentiMapTests.xctest */,
+				E987B6751CC6B69200C107E3 /* SentiMapUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E987B6531CC6B69200C107E3 /* SentiMap */ = {
+			isa = PBXGroup;
+			children = (
+				E987B6571CC6B69200C107E3 /* AppDelegate.h */,
+				E987B6581CC6B69200C107E3 /* AppDelegate.m */,
+				E916537D1CC7762D00861DE0 /* Wheel View */,
+				E987B65D1CC6B69200C107E3 /* Main.storyboard */,
+				E987B6621CC6B69200C107E3 /* LaunchScreen.storyboard */,
+				E987B6651CC6B69200C107E3 /* Info.plist */,
+				E987B6601CC6B69200C107E3 /* Assets.xcassets */,
+				E987B6541CC6B69200C107E3 /* Supporting Files */,
+			);
+			path = SentiMap;
+			sourceTree = "<group>";
+		};
+		E987B6541CC6B69200C107E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E916537F1CC77AAE00861DE0 /* Image Files */,
+				E91653941CC781EB00861DE0 /* Odin Rounded.otf */,
+				E987B6551CC6B69200C107E3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E987B66D1CC6B69200C107E3 /* SentiMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				E987B66E1CC6B69200C107E3 /* SentiMapTests.m */,
+				E987B6701CC6B69200C107E3 /* Info.plist */,
+			);
+			path = SentiMapTests;
+			sourceTree = "<group>";
+		};
+		E987B6781CC6B69200C107E3 /* SentiMapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E987B6791CC6B69200C107E3 /* SentiMapUITests.m */,
+				E987B67B1CC6B69200C107E3 /* Info.plist */,
+			);
+			path = SentiMapUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E987B6501CC6B69200C107E3 /* SentiMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E987B67E1CC6B69200C107E3 /* Build configuration list for PBXNativeTarget "SentiMap" */;
+			buildPhases = (
+				E987B64D1CC6B69200C107E3 /* Sources */,
+				E987B64E1CC6B69200C107E3 /* Frameworks */,
+				E987B64F1CC6B69200C107E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SentiMap;
+			productName = SentiMap;
+			productReference = E987B6511CC6B69200C107E3 /* SentiMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E987B6691CC6B69200C107E3 /* SentiMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E987B6811CC6B69200C107E3 /* Build configuration list for PBXNativeTarget "SentiMapTests" */;
+			buildPhases = (
+				E987B6661CC6B69200C107E3 /* Sources */,
+				E987B6671CC6B69200C107E3 /* Frameworks */,
+				E987B6681CC6B69200C107E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E987B66C1CC6B69200C107E3 /* PBXTargetDependency */,
+			);
+			name = SentiMapTests;
+			productName = SentiMapTests;
+			productReference = E987B66A1CC6B69200C107E3 /* SentiMapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E987B6741CC6B69200C107E3 /* SentiMapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E987B6841CC6B69200C107E3 /* Build configuration list for PBXNativeTarget "SentiMapUITests" */;
+			buildPhases = (
+				E987B6711CC6B69200C107E3 /* Sources */,
+				E987B6721CC6B69200C107E3 /* Frameworks */,
+				E987B6731CC6B69200C107E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E987B6771CC6B69200C107E3 /* PBXTargetDependency */,
+			);
+			name = SentiMapUITests;
+			productName = SentiMapUITests;
+			productReference = E987B6751CC6B69200C107E3 /* SentiMapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E987B6491CC6B69200C107E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SM;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Kibeom Kim";
+				TargetAttributes = {
+					E987B6501CC6B69200C107E3 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					E987B6691CC6B69200C107E3 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = E987B6501CC6B69200C107E3;
+					};
+					E987B6741CC6B69200C107E3 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = E987B6501CC6B69200C107E3;
+					};
+				};
+			};
+			buildConfigurationList = E987B64C1CC6B69200C107E3 /* Build configuration list for PBXProject "SentiMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E987B6481CC6B69200C107E3;
+			productRefGroup = E987B6521CC6B69200C107E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E987B6501CC6B69200C107E3 /* SentiMap */,
+				E987B6691CC6B69200C107E3 /* SentiMapTests */,
+				E987B6741CC6B69200C107E3 /* SentiMapUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E987B64F1CC6B69200C107E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E91653951CC781F600861DE0 /* Odin Rounded.otf in Resources */,
+				E987B6641CC6B69200C107E3 /* LaunchScreen.storyboard in Resources */,
+				E916538F1CC77ACC00861DE0 /* joy@2x.png in Resources */,
+				E987B6611CC6B69200C107E3 /* Assets.xcassets in Resources */,
+				E916538C1CC77ACC00861DE0 /* fun@2x.png in Resources */,
+				E916538A1CC77ACC00861DE0 /* angry@2x.png in Resources */,
+				E916538D1CC77ACC00861DE0 /* sad@2x.png in Resources */,
+				E916538B1CC77ACC00861DE0 /* excited@2x.png in Resources */,
+				E91653921CC77ACC00861DE0 /* wheelGlow@2x.png in Resources */,
+				E91653911CC77ACC00861DE0 /* tired@2x.png in Resources */,
+				E91653931CC77ACC00861DE0 /* wheel@2x.png in Resources */,
+				E916538E1CC77ACC00861DE0 /* surprised@2x.png in Resources */,
+				E91653901CC77ACC00861DE0 /* scared@2x.png in Resources */,
+				E987B65F1CC6B69200C107E3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E987B6681CC6B69200C107E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E987B6731CC6B69200C107E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E987B64D1CC6B69200C107E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E91653A11CC7B17D00861DE0 /* SMTouchUpGestureRecognizer.m in Sources */,
+				E987B6591CC6B69200C107E3 /* AppDelegate.m in Sources */,
+				E916539B1CC7B14B00861DE0 /* SMWheelGestureRecognizer.m in Sources */,
+				E916537C1CC7761B00861DE0 /* SMWheelViewController.m in Sources */,
+				E916539E1CC7B16D00861DE0 /* SMTouchDownGestureRecognizer.m in Sources */,
+				E987B6561CC6B69200C107E3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E987B6661CC6B69200C107E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E987B66F1CC6B69200C107E3 /* SentiMapTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E987B6711CC6B69200C107E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E987B67A1CC6B69200C107E3 /* SentiMapUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E987B66C1CC6B69200C107E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E987B6501CC6B69200C107E3 /* SentiMap */;
+			targetProxy = E987B66B1CC6B69200C107E3 /* PBXContainerItemProxy */;
+		};
+		E987B6771CC6B69200C107E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E987B6501CC6B69200C107E3 /* SentiMap */;
+			targetProxy = E987B6761CC6B69200C107E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E987B65D1CC6B69200C107E3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E987B65E1CC6B69200C107E3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E987B6621CC6B69200C107E3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E987B6631CC6B69200C107E3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E987B67C1CC6B69200C107E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
+			};
+			name = Debug;
+		};
+		E987B67D1CC6B69200C107E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
+			};
+			name = Release;
+		};
+		E987B67F1CC6B69200C107E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SentiMap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NHN-NEXT.SentiMap";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E987B6801CC6B69200C107E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SentiMap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NHN-NEXT.SentiMap";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E987B6821CC6B69200C107E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SentiMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NHN-NEXT.SentiMapTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SentiMap.app/SentiMap";
+			};
+			name = Debug;
+		};
+		E987B6831CC6B69200C107E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SentiMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NHN-NEXT.SentiMapTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SentiMap.app/SentiMap";
+			};
+			name = Release;
+		};
+		E987B6851CC6B69200C107E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SentiMapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NHN-NEXT.SentiMapUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SentiMap;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E987B6861CC6B69200C107E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SentiMapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NHN-NEXT.SentiMapUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SentiMap;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E987B64C1CC6B69200C107E3 /* Build configuration list for PBXProject "SentiMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E987B67C1CC6B69200C107E3 /* Debug */,
+				E987B67D1CC6B69200C107E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E987B67E1CC6B69200C107E3 /* Build configuration list for PBXNativeTarget "SentiMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E987B67F1CC6B69200C107E3 /* Debug */,
+				E987B6801CC6B69200C107E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E987B6811CC6B69200C107E3 /* Build configuration list for PBXNativeTarget "SentiMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E987B6821CC6B69200C107E3 /* Debug */,
+				E987B6831CC6B69200C107E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E987B6841CC6B69200C107E3 /* Build configuration list for PBXNativeTarget "SentiMapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E987B6851CC6B69200C107E3 /* Debug */,
+				E987B6861CC6B69200C107E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E987B6491CC6B69200C107E3 /* Project object */;
+}
