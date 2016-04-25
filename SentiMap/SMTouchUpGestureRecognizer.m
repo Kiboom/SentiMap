@@ -29,9 +29,6 @@
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
     self.state = UIGestureRecognizerStateEnded;
-    if([self.delegate respondsToSelector:self.action]) {
-        [self.delegate performSelector:self.action withObject:self];
-    }
 }
 
 

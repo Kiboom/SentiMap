@@ -27,7 +27,6 @@
     _touch = [touches anyObject];
     UIView *touchedView = ([_touch.view isMemberOfClass:[UIButton class]]) ? _touch.view.superview : _touch.view;   // to make '_touch.view' always be 'wheel container view".
     _currentAngle = [self getTouchAngle:[_touch locationInView:touchedView] fromView:touchedView] * 180/M_PI;
-    NSLog(@"%f, %f", touchedView.frame.origin.x, touchedView.frame.origin.y);
     if([self.delegate respondsToSelector:self.action]) {
         [self.delegate performSelector:self.action withObject:self];
     }

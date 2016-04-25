@@ -44,6 +44,7 @@
 
 /* mood */
 @property NSNumber *chosenMood;
+@property NSInteger preIndex;
 @property NSArray<NSDictionary *> *moodInfo;
 
 /* flags to determine touch priority between two overlayered views */

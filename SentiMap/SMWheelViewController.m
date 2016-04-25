@@ -35,11 +35,12 @@
     NSDictionary *sad = @{@"num":@7, @"text":@"SAD", @"color":[UIColor colorWithRed:(79/255.f) green:(111/255.f) blue:(217/255.f)alpha:1.0], @"image":[UIImage imageNamed:@"sad"]};
     NSDictionary *excited = @{@"num":@8, @"text":@"EXCITED", @"color":[UIColor colorWithRed:(90/255.f) green:(212/255.f) blue:(194/255.f)alpha:1.0], @"image":[UIImage imageNamed:@"excited"]};
     _moodInfo = [[NSArray alloc] initWithObjects:joy, tired, fun, angry, surprised, scared, sad, excited, nil];
+    _preIndex = 10;
 }
 
 - (void)gestureRecognizerInit {
     _wheelGestureRecognizer = [[SMWheelGestureRecognizer alloc] initWithTarget:self action:@selector(didWheelGesture:)];
-    _touchUpGestureRecognizer = [[SMTouchUpGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchUpGesture:)];
+    _touchUpGestureRecognizer = [[SMTouchUpGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchUpGesture)];
     _touchDownGestureRecognizer = [[SMTouchDownGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchDownGesture:)];
     [_wheelContainer addGestureRecognizer:_wheelGestureRecognizer];
     [_wheelContainer addGestureRecognizer:_touchUpGestureRecognizer];
@@ -48,16 +49,16 @@
 
 - (void)wheelInit {
     _isWheelTouched = NO;
-    _moodColor.hidden = YES;
-    _moodPoses.hidden = YES;
-    _wheelGlow.hidden = YES;
+    _moodColor.layer.opacity = 0.0;
+    _moodPoses.layer.opacity = 0.0;
+    _wheelGlow.layer.opacity = 0.0;
     _wheelGlow.layer.shouldRasterize = YES;
-//    [self performSelector:@selector(addPulseAnimationTo:) withObject:_wheelContainer afterDelay:0.1f];
+    [self performSelector:@selector(addPulseAnimationTo:) withObject:_wheelContainer afterDelay:0.1f];
 }
 
 - (void)doneButtonInit {
-    _doneButton.hidden = YES;
-    _doneArrow.hidden = YES;
+    _doneButton.layer.opacity = 0.0;
+    _doneArrow.layer.opacity = 0.0;
     [_doneButton setEnabled:NO];
     [_doneArrow setEnabled:NO];
 }
@@ -74,27 +75,26 @@
     CGFloat rotateDirection = recognizer.currentAngle - _wheelRotateDegree;
     [self rotateWheel:rotateDirection];
     [self wheelGlowAppear];
-    NSLog(@"%f, %f, %f", touchPos.x, touchPos.y, _wheelRotateDegree);
+    NSLog(@"Touch Down, %@", (_wheelGlow.hidden)?@"hidden":@"show");
 }
 
 - (void)wheelGlowAppear {
-    [self addFadeAnimationTo:_wheelGlow duration:0.25];
-    [self addFadeAnimationTo:_moodColor duration:0.25];
-    [self addFadeAnimationTo:_moodLabel duration:0.25];
+    [self addFadeAnimationTo:_wheelGlow duration:0.25 isFadeIn:YES];
+    [self addFadeAnimationTo:_moodColor duration:0.25 isFadeIn:YES];
+    [self addFadeAnimationTo:_moodLabel duration:0.25 isFadeIn:YES];
     [self doneButtonEnable];
-    _wheelGlow.hidden = NO;
-    _moodColor.hidden = NO;
 }
 
-- (void)didTouchUpGesture:(SMTouchUpGestureRecognizer *)recognizer {
+- (void)didTouchUpGesture {
     [self wheelGlowDisappear];
+    NSLog(@"Touch Up, %@", (_wheelGlow.hidden)?@"hidden":@"show");
 }
 
 - (void)wheelGlowDisappear {
-    [self addFadeAnimationTo:_wheelGlow duration:0.25];
-    _wheelGlow.hidden = YES;
+    [self addFadeAnimationTo:_wheelGlow duration:0.25 isFadeIn:NO];
     _isWheelTouched = NO;
 }
+
 
 
 /* wheel rotation */
@@ -131,12 +131,12 @@
         return;
     }
     NSInteger index = _wheelRotateDegree/45;
-    [self addFadeAnimationTo:_moodColor duration:0.25];
-    [self addFadeAnimationTo:_moodLabel duration:0.25];
-    _moodLabel.text = [(NSDictionary *)_moodInfo[index] objectForKey:@"text"];
-    _moodLabel.textColor = [(NSDictionary *)_moodInfo[index] objectForKey:@"color"];
-    _moodColor.image = [(NSDictionary *)_moodInfo[index] objectForKey:@"image"];
-    _chosenMood = [(NSDictionary *)_moodInfo[index] objectForKey:@"num"];
+    if(_preIndex != index){
+        [self addUpdateMoodAnimationTo:_moodColor duration:0.1 moodInfo:_moodInfo[index]];
+        [self addUpdateMoodAnimationTo:_moodLabel duration:0.1 moodInfo:_moodInfo[index]];
+    }
+    _chosenMood = [_moodInfo[index] objectForKey:@"num"];
+    _preIndex = index;
 }
 
 
@@ -164,11 +164,29 @@
     [view.layer addAnimation:animation forKey:key];
 }
 
-- (void)addFadeAnimationTo:(UIView *)view duration:(CGFloat)duration{
-    CATransition *animation = [CATransition animation];
-    animation.type = kCATransitionFade;
-    animation.duration = duration;
-    [view.layer addAnimation:animation forKey:nil];
+- (void)addFadeAnimationTo:(UIView *)view duration:(CGFloat)duration isFadeIn:(BOOL)isFadeIn {
+    [UIView animateWithDuration:duration
+                     animations:^{
+                         view.layer.opacity = (isFadeIn)? 1.0 : 0.0;
+                     }];
+}
+
+- (void)addUpdateMoodAnimationTo:(UIView *)view duration:(CGFloat)duration moodInfo:(NSDictionary *)moodInfo {
+    NSLog(@"animated!");
+    [UIView transitionWithView:view
+                      duration:duration
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        if([view isMemberOfClass:[UILabel class]]){
+                            UILabel *label = (UILabel *)view;
+                            label.text = [moodInfo objectForKey:@"text"];
+                            label.textColor = [moodInfo objectForKey:@"color"];
+                        } else {
+                            UIImageView *imageView = (UIImageView *)view;
+                            imageView.image = [moodInfo objectForKey:@"image"];
+                        }
+                    }
+                    completion:nil];
 }
 
 
@@ -178,15 +196,13 @@
     UITouch *touch = [[event touchesForView:sender] anyObject];
     CGPoint touchPos = [touch locationInView:_wheelContainer];
     if([self isMoodPosExposerTouched:touchPos]) {
-        [self addFadeAnimationTo:_moodPoses duration:0.4];
-        _moodPoses.hidden = NO;
+        [self addFadeAnimationTo:_moodPoses duration:0.4 isFadeIn:YES];
         _isWheelTouched = NO;
     }
 }
 
 - (IBAction)moodPosHide:(UIButton *)sender forEvent:(UIEvent *)event {
-    [self addFadeAnimationTo:_moodPoses duration:0.4];
-    _moodPoses.hidden = YES;
+    [self addFadeAnimationTo:_moodPoses duration:0.4 isFadeIn:NO];
 }
 
     // determine touch priority between two overlayered views (moodPosExposer and wheel)
@@ -204,12 +220,10 @@
 
 /* done button */
 - (void)doneButtonEnable {
-    [self addFadeAnimationTo:_doneButton duration:0.9];
-    [self addFadeAnimationTo:_doneArrow duration:0.9];
+    [self addFadeAnimationTo:_doneButton duration:0.9 isFadeIn:YES];
+    [self addFadeAnimationTo:_doneArrow duration:0.9 isFadeIn:YES];
     [_doneButton setEnabled:YES];
     [_doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    _doneButton.hidden = NO;
-    _doneArrow.hidden = NO;
 }
 
 - (IBAction)done:(id)sender {
