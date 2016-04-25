@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UIKit/UITouch.h>
+#import <UIKit/UIGestureRecognizerSubclass.h>
+
+@protocol SMTouchUpGestureRecognizerDelegate <UIGestureRecognizerDelegate>
+@end
 
 @interface SMTouchUpGestureRecognizer : UIGestureRecognizer
-
+@property SEL action;
 @end

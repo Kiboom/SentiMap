@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UIKit/UIGestureRecognizerSubclass.h>
+
+@protocol SMTouchDownGestureRecognizerDelegate <UIGestureRecognizerDelegate>
+@end
 
 @interface SMTouchDownGestureRecognizer : UIGestureRecognizer
-
+@property SEL action;
+@property UITouch *touch;
+@property CGFloat currentAngle;
 @end

@@ -12,20 +12,20 @@
 @end
 
 @implementation SMWheelViewController
-
+/* initialization */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initializeMoodInfo];
-    self.wheelGestureRecognizer = [[SMWheelGestureRecognizer alloc] initWithTarget:self action:@selector(didWheelGesture:)];
-    [self.wheelContainer addGestureRecognizer:self.wheelGestureRecognizer];
-    _isWheelTouched = YES;
+    [self moodInfoInit];
+    [self gestureRecognizerInit];
+    [self wheelInit];
+    [self doneButtonInit];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (void)initializeMoodInfo {
+- (void)moodInfoInit {
     NSDictionary *joy = @{@"num":@1, @"text":@"JOY", @"color":[UIColor colorWithRed:(199/255.f) green:(154/255.f) blue:(23/255.f) alpha:1.0], @"image":[UIImage imageNamed:@"joy"]};
     NSDictionary *tired = @{@"num":@2, @"text":@"TIRED", @"color":[UIColor colorWithRed:(114/255.f) green:(80/255.f) blue:(46/255.f) alpha:1.0], @"image":[UIImage imageNamed:@"tired"]};
     NSDictionary *fun = @{@"num":@3, @"text":@"FUN", @"color":[UIColor colorWithRed:(199/255.f) green:(87/255.f) blue:(25/255.f)alpha:1.0], @"image":[UIImage imageNamed:@"fun"]};
@@ -37,51 +37,102 @@
     _moodInfo = [[NSArray alloc] initWithObjects:joy, tired, fun, angry, surprised, scared, sad, excited, nil];
 }
 
+- (void)gestureRecognizerInit {
+    _wheelGestureRecognizer = [[SMWheelGestureRecognizer alloc] initWithTarget:self action:@selector(didWheelGesture:)];
+    _touchUpGestureRecognizer = [[SMTouchUpGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchUpGesture:)];
+    _touchDownGestureRecognizer = [[SMTouchDownGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchDownGesture:)];
+    [_wheelContainer addGestureRecognizer:_wheelGestureRecognizer];
+    [_wheelContainer addGestureRecognizer:_touchUpGestureRecognizer];
+    [_wheelContainer addGestureRecognizer:_touchDownGestureRecognizer];
+}
 
-- (void)didWheelGesture:(SMWheelGestureRecognizer *)recognizer {
-    CGPoint touchPos = [recognizer.touch locationInView:self.wheelContainer];
-    if([recognizer state] == UIGestureRecognizerStateEnded) {
-        return;
-    }
+- (void)wheelInit {
+    _isWheelTouched = NO;
+    _moodColor.hidden = YES;
+    _moodPoses.hidden = YES;
+    _wheelGlow.hidden = YES;
+    _wheelGlow.layer.shouldRasterize = YES;
+//    [self performSelector:@selector(addPulseAnimationTo:) withObject:_wheelContainer afterDelay:0.1f];
+}
+
+- (void)doneButtonInit {
+    _doneButton.hidden = YES;
+    _doneArrow.hidden = YES;
+    [_doneButton setEnabled:NO];
+    [_doneArrow setEnabled:NO];
+}
+
+
+
+/* wheel glow */
+- (void)didTouchDownGesture:(SMTouchDownGestureRecognizer *)recognizer {
+    CGPoint touchPos = [recognizer.touch locationInView:_wheelContainer];
     if([self isMoodPosExposerTouched:touchPos]) {
         return;
     }
-    CGFloat direction = recognizer.currentAngle - recognizer.previousAngle;
-    [self updateWheelRotateAngle:direction];
-    [self rotateWheel:direction];
-    [self giveAnimationToMood];
-    [self updateCurrentMood];
+    _isWheelTouched = YES;
+    CGFloat rotateDirection = recognizer.currentAngle - _wheelRotateDegree;
+    [self rotateWheel:rotateDirection];
+    [self wheelGlowAppear];
+    NSLog(@"%f, %f, %f", touchPos.x, touchPos.y, _wheelRotateDegree);
+}
+
+- (void)wheelGlowAppear {
+    [self addFadeAnimationTo:_wheelGlow duration:0.25];
+    [self addFadeAnimationTo:_moodColor duration:0.25];
+    [self addFadeAnimationTo:_moodLabel duration:0.25];
+    [self doneButtonEnable];
+    _wheelGlow.hidden = NO;
+    _moodColor.hidden = NO;
+}
+
+- (void)didTouchUpGesture:(SMTouchUpGestureRecognizer *)recognizer {
+    [self wheelGlowDisappear];
+}
+
+- (void)wheelGlowDisappear {
+    [self addFadeAnimationTo:_wheelGlow duration:0.25];
+    _wheelGlow.hidden = YES;
+    _isWheelTouched = NO;
 }
 
 
-- (void)updateWheelRotateAngle:(CGFloat)direction {
-    _wheelRotateAngle += 180 * direction / M_PI;
-    if(_wheelRotateAngle < -0.5) {
-        _wheelRotateAngle += 360;
+/* wheel rotation */
+- (void)didWheelGesture:(SMWheelGestureRecognizer *)recognizer {
+    if([recognizer state] == UIGestureRecognizerStateEnded) {
+        return;
     }
-    else if(_wheelRotateAngle > 359.5) {
-        _wheelRotateAngle -= 360;
+    CGPoint touchPos = [recognizer.touch locationInView:_wheelContainer];
+    if([self isMoodPosExposerTouched:touchPos] || _wheelGlow.hidden) {
+        return;
     }
+    [self rotateWheel:recognizer.rotateDirection];
 }
 
+- (void)updateWheelRotateDegree:(CGFloat)direction {
+    _wheelRotateDegree += direction;
+    if(_wheelRotateDegree < -0.5) {
+        _wheelRotateDegree += 360;
+    }
+    else if(_wheelRotateDegree > 359.5) {
+        _wheelRotateDegree -= 360;
+    }
+}
 
 - (void)rotateWheel:(CGFloat)direction {
-    CGAffineTransform newTransform = CGAffineTransformRotate(self.wheelGlow.transform, direction);
+    [self updateWheelRotateDegree:direction];
+    CGAffineTransform newTransform = CGAffineTransformRotate(self.wheelGlow.transform, direction*M_PI/180);
     [self.wheelGlow setTransform:newTransform];
+    [self updateCurrentMood];
 }
-
-
-- (void)giveAnimationToMood {
-    
-}
-
 
 - (void)updateCurrentMood {
     if(_isWheelTouched == NO) {
         return;
     }
-    [self giveAnimationToMood];
-    NSInteger index = _wheelRotateAngle/45;
+    NSInteger index = _wheelRotateDegree/45;
+    [self addFadeAnimationTo:_moodColor duration:0.25];
+    [self addFadeAnimationTo:_moodLabel duration:0.25];
     _moodLabel.text = [(NSDictionary *)_moodInfo[index] objectForKey:@"text"];
     _moodLabel.textColor = [(NSDictionary *)_moodInfo[index] objectForKey:@"color"];
     _moodColor.image = [(NSDictionary *)_moodInfo[index] objectForKey:@"image"];
@@ -89,38 +140,90 @@
 }
 
 
-// determine touch priority between two overlayered views (moodPosExposer and wheel)
-- (BOOL)isMoodPosExposerTouched:(CGPoint)touchPos {
-    if(_isMoodPosesTouched){
-        return YES;
+
+/* animation */
+- (void)addPulseAnimationTo:(UIView *)view {
+    [self addRepeatAnimationTo:view
+                  forKey:@"transform.scale"
+               fromValue:@1.0
+                 toValue:@1.04];
+    
+    [self addRepeatAnimationTo:view
+                  forKey:@"opacity"
+               fromValue:@0.86
+                 toValue:@1.0];
+}
+
+- (void)addRepeatAnimationTo:(UIView *)view forKey:(NSString *)key fromValue:(NSNumber *)fromValue toValue:(NSNumber *)toValue {
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:key];
+    animation.duration = 2;
+    animation.repeatCount = HUGE_VALF;
+    animation.autoreverses = YES;
+    animation.fromValue = fromValue;
+    animation.toValue = toValue;
+    [view.layer addAnimation:animation forKey:key];
+}
+
+- (void)addFadeAnimationTo:(UIView *)view duration:(CGFloat)duration{
+    CATransition *animation = [CATransition animation];
+    animation.type = kCATransitionFade;
+    animation.duration = duration;
+    [view.layer addAnimation:animation forKey:nil];
+}
+
+
+
+/* moodPos button */
+- (IBAction)moodPosShow:(UIButton *)sender forEvent:(UIEvent *)event {
+    UITouch *touch = [[event touchesForView:sender] anyObject];
+    CGPoint touchPos = [touch locationInView:_wheelContainer];
+    if([self isMoodPosExposerTouched:touchPos]) {
+        [self addFadeAnimationTo:_moodPoses duration:0.4];
+        _moodPoses.hidden = NO;
+        _isWheelTouched = NO;
     }
-    CGPoint wheelPos = self.moodColor.center;
-    CGFloat fromCenterToTouch = sqrt(pow(touchPos.x, wheelPos.x) + pow(touchPos.y, wheelPos.y));
-    CGFloat moodColorRadius = self.moodColor.frame.size.width/2;
-    if(_isWheelTouched || fromCenterToTouch-moodColorRadius>0){
-        NSLog(@"Can't expose moodPoses. Out of touch range.");
+}
+
+- (IBAction)moodPosHide:(UIButton *)sender forEvent:(UIEvent *)event {
+    [self addFadeAnimationTo:_moodPoses duration:0.4];
+    _moodPoses.hidden = YES;
+}
+
+    // determine touch priority between two overlayered views (moodPosExposer and wheel)
+- (BOOL)isMoodPosExposerTouched:(CGPoint)touchPos {
+    CGPoint wheelPos = _moodColor.center;
+    CGFloat fromCenterToTouch = sqrt(pow(wheelPos.x-touchPos.x, 2) + pow(wheelPos.y-touchPos.y, 2));
+    CGFloat moodColorRadius = _moodColor.frame.size.width/2;
+    if(_isWheelTouched || fromCenterToTouch>moodColorRadius){
         return NO;
     }
     return YES;
 }
 
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)moodPosShow:(id)sender {
-}
-
-- (IBAction)moodPosHide:(id)sender {
+/* done button */
+- (void)doneButtonEnable {
+    [self addFadeAnimationTo:_doneButton duration:0.9];
+    [self addFadeAnimationTo:_doneArrow duration:0.9];
+    [_doneButton setEnabled:YES];
+    [_doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    _doneButton.hidden = NO;
+    _doneArrow.hidden = NO;
 }
 
 - (IBAction)done:(id)sender {
 }
+
+
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 @end

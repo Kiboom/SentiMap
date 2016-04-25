@@ -10,4 +10,29 @@
 
 @implementation SMTouchUpGestureRecognizer
 
+- (id)initWithTarget:(id)target action:(SEL)action {
+    if(self = [super initWithTarget:target action:action]) {
+        self.delegate = target;
+        self.action = action;
+    }
+    return self;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    if(touches.count > 1) {
+        self.state = UIGestureRecognizerStateFailed;
+        return;
+    }
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesEnded:touches withEvent:event];
+    self.state = UIGestureRecognizerStateEnded;
+    if([self.delegate respondsToSelector:self.action]) {
+        [self.delegate performSelector:self.action withObject:self];
+    }
+}
+
+
 @end

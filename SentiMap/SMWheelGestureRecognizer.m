@@ -30,10 +30,11 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesMoved:touches withEvent:event];
-    self.touch = [touches anyObject];
-    
-    self.currentAngle = [self getTouchAngle:[self.touch locationInView:self.touch.view]];
-    self.previousAngle = [self getTouchAngle:[self.touch previousLocationInView:self.touch.view]];
+    _touch = [touches anyObject];
+    UIView *touchedView = ([_touch.view isMemberOfClass:[UIButton class]]) ? _touch.view.superview : _touch.view;   // to make '_touch.view' always be 'wheel container view".
+    CGFloat currentAngle = [self getTouchAngle:[_touch locationInView:touchedView] fromView:touchedView];
+    CGFloat previousAngle = [self getTouchAngle:[_touch previousLocationInView:touchedView] fromView:touchedView];
+    _rotateDirection = (currentAngle - previousAngle) * 180/M_PI;
     
     if([self.delegate respondsToSelector:self.action]) {
         [self.delegate performSelector:self.action withObject:self];
@@ -41,10 +42,10 @@
 }
 
 
-- (float)getTouchAngle:(CGPoint)touch {
+- (float)getTouchAngle:(CGPoint)touch fromView:(UIView *)touchedView {
     // translate to coordinate whose starting point is center of 'wheel container' view.
-    float x = touch.x - 150;
-    float y = -(touch.y - 150);
+    float x = touch.x - touchedView.frame.size.width/2;
+    float y = -(touch.y - touchedView.frame.size.width/2);
     
     // to avoid divide by 0
     if (y == 0) {
