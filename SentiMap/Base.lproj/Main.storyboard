@@ -88,7 +88,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ar-CL-rVM" userLabel="city">
                                 <rect key="frame" x="259" y="83" width="52" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="15" id="9sZ-4x-wU1"/>
+                                    <constraint firstAttribute="width" constant="15" id="9sZ-4x-wU1">
+                                        <variation key="widthClass=compact" constant="201"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="22" id="HAC-jB-OL0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="22"/>

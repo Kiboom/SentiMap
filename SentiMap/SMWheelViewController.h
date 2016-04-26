@@ -12,7 +12,7 @@
 #import "SMTouchUpGestureRecognizer.h"
 #import "SMTouchDownGestureRecognizer.h"
 
-@interface SMWheelViewController : UIViewController <SMWheelGestureRecognizerDelegate, SMTouchUpGestureRecognizerDelegate, CLLocationManagerDelegate>
+@interface SMWheelViewController : UIViewController <SMWheelGestureRecognizerDelegate, SMTouchUpGestureRecognizerDelegate, SMTouchDownGestureRecognizerDelegate, CLLocationManagerDelegate>
 
 /* recognizer */
 @property SMWheelGestureRecognizer *wheelGestureRecognizer;
@@ -39,8 +39,9 @@
 
 /* geographical position */
 @property NSString *city;
-@property double *longitude;
-@property double *latitude;
+@property double longitude;
+@property double latitude;
+@property CLLocationManager *locationManager;
 
 /* mood */
 @property NSNumber *chosenMood;
@@ -50,6 +51,7 @@
 /* flags to determine touch priority between two overlayered views */
 @property BOOL isWheelTouched;
 @property BOOL isMoodPosExposerTouched;
+
 
 /* IBActions */
 - (IBAction)done:(id)sender;

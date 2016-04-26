@@ -17,8 +17,14 @@
     [super viewDidLoad];
     [self moodInfoInit];
     [self gestureRecognizerInit];
+    [self locationManagerInit];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self wheelInit];
     [self doneButtonInit];
+    [self locationManagerStart];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,6 +69,19 @@
     [_doneArrow setEnabled:NO];
 }
 
+- (void)locationManagerInit {
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    _locationManager.delegate = self;
+}
+
+- (void)locationManagerStart {
+    if([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [_locationManager requestWhenInUseAuthorization];
+    }
+    [_locationManager startMonitoringSignificantLocationChanges];
+    [_locationManager startUpdatingLocation];
+}
 
 
 /* wheel glow */
@@ -75,7 +94,6 @@
     CGFloat rotateDirection = recognizer.currentAngle - _wheelRotateDegree;
     [self rotateWheel:rotateDirection];
     [self wheelGlowAppear];
-    NSLog(@"Touch Down, %@", (_wheelGlow.hidden)?@"hidden":@"show");
 }
 
 - (void)wheelGlowAppear {
@@ -87,7 +105,6 @@
 
 - (void)didTouchUpGesture {
     [self wheelGlowDisappear];
-    NSLog(@"Touch Up, %@", (_wheelGlow.hidden)?@"hidden":@"show");
 }
 
 - (void)wheelGlowDisappear {
@@ -172,7 +189,6 @@
 }
 
 - (void)addUpdateMoodAnimationTo:(UIView *)view duration:(CGFloat)duration moodInfo:(NSDictionary *)moodInfo {
-    NSLog(@"animated!");
     [UIView transitionWithView:view
                       duration:duration
                        options:UIViewAnimationOptionTransitionCrossDissolve
@@ -196,13 +212,13 @@
     UITouch *touch = [[event touchesForView:sender] anyObject];
     CGPoint touchPos = [touch locationInView:_wheelContainer];
     if([self isMoodPosExposerTouched:touchPos]) {
-        [self addFadeAnimationTo:_moodPoses duration:0.4 isFadeIn:YES];
         _isWheelTouched = NO;
+        [self addFadeAnimationTo:_moodPoses duration:0.2 isFadeIn:YES];
     }
 }
 
 - (IBAction)moodPosHide:(UIButton *)sender forEvent:(UIEvent *)event {
-    [self addFadeAnimationTo:_moodPoses duration:0.4 isFadeIn:NO];
+    [self addFadeAnimationTo:_moodPoses duration:0.2 isFadeIn:NO];
 }
 
     // determine touch priority between two overlayered views (moodPosExposer and wheel)
@@ -230,6 +246,59 @@
 }
 
 
+
+/* location manage */
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    CLLocation *currentLocation = [locations lastObject];
+    _latitude = currentLocation.coordinate.latitude;
+    _longitude = currentLocation.coordinate.longitude;
+    
+    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
+    [geoCoder reverseGeocodeLocation:manager.location
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       if(error) {
+                           NSLog(@"Geocode failed with error: %@", error);
+                           return;
+                       }
+                       NSMutableArray *userDefaultLanguages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
+                       [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"en", nil] forKey:@"AppleLanguages"];
+                       [self updateCityLabelWithPlacemarks:placemarks manager:manager];
+                       [[NSUserDefaults standardUserDefaults] setObject:userDefaultLanguages forKey:@"AppleLanguages"];
+                   }];
+}
+
+- (void)updateCityLabelWithPlacemarks:(NSArray *)placemarks manager:(CLLocationManager *)manager {
+    _city = [(CLPlacemark *)[placemarks lastObject] thoroughfare];
+    NSLog(@"%@, %f, %f",_city,_latitude,_longitude);
+    [manager stopUpdatingLocation];
+    _cityLabel.text = (_city)?_city:@"Bermuda Triangle";
+    _cityLabel.textColor = [UIColor whiteColor];
+}
+
+/*
+- (NSString *)getMostFrequentCityInPlacemarks:(NSArray *)placemarks {
+    NSMutableArray *cityArray = [[NSMutableArray alloc] init];
+    for(CLPlacemark *placemark in placemarks) {
+        NSString *city = placemark.thoroughfare;
+        [cityArray addObject:(city)?city:@"Bermuda Triangle"];  //add empty string if city name's not found.
+    }
+    NSCountedSet *citySet = [[NSCountedSet alloc] initWithArray:cityArray];
+    NSString *mostOccurringCity = @"";
+    NSInteger highestCount = 0;
+    for(NSString *tempCity in citySet) {
+        NSInteger tempCount = [citySet countForObject:tempCity];
+        if(tempCount >= highestCount) {
+            highestCount = tempCount;
+            mostOccurringCity = tempCity;
+        }
+    }
+    return mostOccurringCity;
+}
+ */
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"location manager instance error.");
+}
 
 /*
  #pragma mark - Navigation
