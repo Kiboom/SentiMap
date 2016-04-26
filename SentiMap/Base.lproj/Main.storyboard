@@ -277,7 +277,6 @@
                                         </variation>
                                         <connections>
                                             <action selector="done:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oI5-Na-H8o"/>
-                                            <action selector="moodPosShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JUH-qo-J1S"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP0-Cm-fJg">

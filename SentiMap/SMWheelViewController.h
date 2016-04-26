@@ -11,8 +11,13 @@
 #import "SMWheelGestureRecognizer.h"
 #import "SMTouchUpGestureRecognizer.h"
 #import "SMTouchDownGestureRecognizer.h"
+#import "AFHTTPSessionManager.h"
 
 @interface SMWheelViewController : UIViewController <SMWheelGestureRecognizerDelegate, SMTouchUpGestureRecognizerDelegate, SMTouchDownGestureRecognizerDelegate, CLLocationManagerDelegate>
+
+/* URL request info */
+@property unsigned long long userId;
+@property NSString *serverURL;
 
 /* recognizer */
 @property SMWheelGestureRecognizer *wheelGestureRecognizer;

@@ -18,6 +18,7 @@
     [self moodInfoInit];
     [self gestureRecognizerInit];
     [self locationManagerInit];
+    [self URLRequestInfoInit];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -81,6 +82,11 @@
     }
     [_locationManager startMonitoringSignificantLocationChanges];
     [_locationManager startUpdatingLocation];
+}
+
+- (void)URLRequestInfoInit {
+    _userId = 1;
+    _serverURL = @"http://52.192.198.85:5000/insertEmotion";
 }
 
 
@@ -243,6 +249,12 @@
 }
 
 - (IBAction)done:(id)sender {
+    NSDictionary *parameters = @{@"userid":[NSNumber numberWithUnsignedLongLong:_userId],
+                                 @"lat":[NSNumber numberWithDouble:_latitude],
+                                 @"lon":[NSNumber numberWithDouble:_longitude],
+                                 @"emotion":_chosenMood};
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager POST:_serverURL parameters:parameters progress:nil success:nil failure:nil];
 }
 
 
@@ -275,29 +287,15 @@
     _cityLabel.textColor = [UIColor whiteColor];
 }
 
-/*
-- (NSString *)getMostFrequentCityInPlacemarks:(NSArray *)placemarks {
-    NSMutableArray *cityArray = [[NSMutableArray alloc] init];
-    for(CLPlacemark *placemark in placemarks) {
-        NSString *city = placemark.thoroughfare;
-        [cityArray addObject:(city)?city:@"Bermuda Triangle"];  //add empty string if city name's not found.
-    }
-    NSCountedSet *citySet = [[NSCountedSet alloc] initWithArray:cityArray];
-    NSString *mostOccurringCity = @"";
-    NSInteger highestCount = 0;
-    for(NSString *tempCity in citySet) {
-        NSInteger tempCount = [citySet countForObject:tempCity];
-        if(tempCount >= highestCount) {
-            highestCount = tempCount;
-            mostOccurringCity = tempCity;
-        }
-    }
-    return mostOccurringCity;
-}
- */
-
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"location manager instance error.");
+}
+
+
+
+/* status bar */
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 /*
