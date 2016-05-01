@@ -58,6 +58,11 @@
 @property BOOL isWheelTouched;
 @property BOOL isMoodPosExposerTouched;
 
+/* first tutorial view */
+@property (strong, nonatomic) IBOutlet UIView *firstMessageViewController;
+
+/* notification */
+@property NSNotificationCenter *notiCenter;
 
 /* IBActions */
 - (IBAction)done:(id)sender;

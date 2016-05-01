@@ -10,8 +10,12 @@
 #import <UIKit/UIKit.h>
 
 @interface SMSideMenuViewController : UIViewController
+
 @property NSNotificationCenter *notiCenter;
+
 - (IBAction)searchPlace:(id)sender;
 - (IBAction)timeMachine:(id)sender;
 - (IBAction)logOut:(id)sender;
+- (IBAction)exitSideMenu:(id)sender;
+
 @end

@@ -15,12 +15,14 @@
 /* initialization */
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self checkFirstVisit];
     [self wheelInit];
     [self doneButtonInit];
     [self moodInfoInit];
     [self gestureRecognizerInit];
     [self locationManagerInit];
     [self URLRequestInfoInit];
+    [self notificationInit];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -32,6 +34,14 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)checkFirstVisit {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self showFirstMessage];
+    }
 }
 
 - (void)moodInfoInit {
@@ -79,9 +89,6 @@
 }
 
 - (void)locationManagerStart {
-    if([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [_locationManager requestWhenInUseAuthorization];
-    }
     [_locationManager startMonitoringSignificantLocationChanges];
     [_locationManager startUpdatingLocation];
 }
@@ -89,6 +96,11 @@
 - (void)URLRequestInfoInit {
     _userId = 1;
     _serverURL = @"http://52.192.198.85:5000/insertEmotion";
+}
+
+- (void)notificationInit {
+    _notiCenter = [NSNotificationCenter defaultCenter];
+    [_notiCenter addObserver:self selector:@selector(closeFirstMessage) name:@"firstMessageClose" object:nil];
 }
 
 
@@ -285,7 +297,7 @@
     _city = [(CLPlacemark *)[placemarks lastObject] thoroughfare];
     NSLog(@"%@, %f, %f",_city,_latitude,_longitude);
     [manager stopUpdatingLocation];
-    _cityLabel.text = (_city)?_city:@"Bermuda Triangle";
+    _cityLabel.text = (_city)?_city:@"Infinite Loop";
     _cityLabel.textColor = [UIColor whiteColor];
 }
 
@@ -303,10 +315,30 @@
  #pragma mark - Navigation
  
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-     SMMapContainerViewController *mapContainer = [segue destinationViewController];
-     mapContainer.mood = _chosenMood.intValue;
-     mapContainer.latitude = _latitude;
-     mapContainer.longitude = _longitude;
+     if([[segue destinationViewController] isKindOfClass:[SMMapContainerViewController class]]){
+         SMMapContainerViewController *mapContainer = [segue destinationViewController];
+         mapContainer.mood = _chosenMood.intValue;
+         mapContainer.latitude = _latitude;
+         mapContainer.longitude = _longitude;
+     }
  }
+
+
+/* first message */
+- (void)showFirstMessage {
+    _firstMessageViewController.hidden = NO;
+    [self.view bringSubviewToFront:_firstMessageViewController];
+}
+
+- (void)closeFirstMessage {
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         _firstMessageViewController.layer.opacity = 0.0;
+                    }completion:^(BOOL finished) {
+                        if([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+                            [_locationManager requestWhenInUseAuthorization];
+                        }
+                    }];
+}
 
 @end

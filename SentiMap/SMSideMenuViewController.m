@@ -23,5 +23,17 @@
 }
 
 - (IBAction)logOut:(id)sender {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"About"
+                                                                   message:@"ver. 0.0.2\ndeveloped by Kibeom Kim"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (IBAction)exitSideMenu:(id)sender {
+    [_notiCenter postNotificationName:@"side menu deactivated" object:nil];
 }
 @end

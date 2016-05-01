@@ -120,7 +120,6 @@
                                           Mood: [_receivedMoods[i] intValue]
                                  JustExpressed:NO];
              }
-//             [self updateVisibleAnnotations];
          }
          failure:^(NSURLSessionTask *task, NSError *error) {
              NSLog(@"Error: %@", error);
@@ -156,7 +155,6 @@
 
 - (void)updateMoods:(NSNotification *)noti{
     NSString *time = (NSString *)noti.userInfo[@"time"];
-    NSLog(@"%@",time);
     [_map removeAnnotations:[_map annotations]];
     [self fetchJSONDataByTime:time];
 }
@@ -180,63 +178,9 @@
     [_map addAnnotation:annotation];
     
     if(justExpressed) {
-        MKMapPoint point = MKMapPointForCoordinate(annotation.coordinate);
-        if(MKMapRectContainsPoint(_map.visibleMapRect, point)) {
-            // Move annotation out of view
-            CGRect endFrame = annotation.annotationView.frame;
-            annotation.annotationView.frame = CGRectMake(annotation.annotationView.frame.origin.x, -500, annotation.annotationView.frame.size.width, annotation.annotationView.frame.size.height);
-            NSLog(@"%f", annotation.annotationView.frame.origin.y);
-            [self addDropAnimationTo:annotation.annotationView endFrame:endFrame];
-            annotation.title = @"Here's your feeling!";
-            [_map selectAnnotation:annotation animated:YES];
-        }
+        annotation.title = @"Here's your feeling!";
+        [_map selectAnnotation:annotation animated:YES];
     }
-}
-
-
-- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
-//    for (MKAnnotationView *view in views) {
-//        // Give animation to annotations if it's inside visible map rect, else go to next one
-//        MKMapPoint point = MKMapPointForCoordinate(view.annotation.coordinate);
-//        if(MKMapRectContainsPoint(_map.visibleMapRect, point)) {
-//            // Move annotation out of view
-//            CGRect endFrame = view.frame;
-//            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y - self.view.frame.size.height, view.frame.size.width, view.frame.size.height);
-//            [self addDropAnimationTo:view endFrame:endFrame];
-//        }
-    
-//        if (annotation.clusterAnnotation != nil) {
-//            // animate the annotation from it's old container's coordinate, to its actual coordinate
-//            CLLocationCoordinate2D actualCoordinate = annotation.coordinate;
-//            CLLocationCoordinate2D containerCoordinate = annotation.clusterAnnotation.coordinate;
-//            
-//            // since it's displayed on the map, it is no longer contained by another annotation,
-//            // (We couldn't reset this in -updateVisibleAnnotations because we needed the reference to it here
-//            // to get the containerCoordinate)
-//            view.clusterAnnotation = nil;
-//            
-//            annotation.coordinate = containerCoordinate;
-//            
-//            [UIView animateWithDuration:0.3 animations:^{
-//                annotation.coordinate = actualCoordinate;
-//            }];
-//        }
-//    }
-}
-
-
-- (void)addDropAnimationTo:(UIView *)view endFrame:(CGRect)endFrame {
-    [UIView animateWithDuration:0.4
-                          delay:0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^ {
-                         view.frame = endFrame;
-                     }
-                     completion:^(BOOL finished) {
-                         if(finished) {
-                             [self addSquashAnimationTo:view];
-                         }
-                     }];
 }
 
 

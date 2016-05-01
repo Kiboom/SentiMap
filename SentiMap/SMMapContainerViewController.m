@@ -39,6 +39,8 @@
     
     [_notiCenter addObserver:self selector:@selector(showSideMenu:) name:@"return to side menu" object:nil];
     [_notiCenter addObserver:self selector:@selector(hideTimeMachine) name:@"return to side menu" object:nil];
+    
+    [_notiCenter addObserver:self selector:@selector(hideSideMenu) name:@"side menu deactivated" object:nil];
 }
 
 - (void)sideMenuInit {

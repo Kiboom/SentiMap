@@ -32,8 +32,9 @@
 		E94BFD741CD60D100046B3D4 /* SMTimeMachineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94BFD731CD60D100046B3D4 /* SMTimeMachineViewController.m */; };
 		E94BFD761CD60F0B0046B3D4 /* selected_time_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E94BFD751CD60F0B0046B3D4 /* selected_time_indicator@2x.png */; };
 		E94BFD7A1CD625DB0046B3D4 /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = E94BFD791CD625DB0046B3D4 /* x.png */; };
-		E94BFD7D1CD692CA0046B3D4 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E94BFD7C1CD692CA0046B3D4 /* Icon.png */; };
 		E94BFD7F1CD693090046B3D4 /* launch_screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E94BFD7E1CD693090046B3D4 /* launch_screen@2x.png */; };
+		E94BFD811CD69DF20046B3D4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E94BFD801CD69DF20046B3D4 /* icon@2x.png */; };
+		E94BFD851CD6AB460046B3D4 /* SMFirstMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94BFD841CD6AB460046B3D4 /* SMFirstMessageViewController.m */; };
 		E987B6561CC6B69200C107E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E987B6551CC6B69200C107E3 /* main.m */; };
 		E987B6591CC6B69200C107E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E987B6581CC6B69200C107E3 /* AppDelegate.m */; };
 		E987B65F1CC6B69200C107E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E987B65D1CC6B69200C107E3 /* Main.storyboard */; };
@@ -107,8 +108,10 @@
 		E94BFD731CD60D100046B3D4 /* SMTimeMachineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTimeMachineViewController.m; sourceTree = "<group>"; };
 		E94BFD751CD60F0B0046B3D4 /* selected_time_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selected_time_indicator@2x.png"; sourceTree = "<group>"; };
 		E94BFD791CD625DB0046B3D4 /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x.png; sourceTree = "<group>"; };
-		E94BFD7C1CD692CA0046B3D4 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		E94BFD7E1CD693090046B3D4 /* launch_screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch_screen@2x.png"; sourceTree = "<group>"; };
+		E94BFD801CD69DF20046B3D4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		E94BFD831CD6AB460046B3D4 /* SMFirstMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMFirstMessageViewController.h; sourceTree = "<group>"; };
+		E94BFD841CD6AB460046B3D4 /* SMFirstMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMFirstMessageViewController.m; sourceTree = "<group>"; };
 		E987B6511CC6B69200C107E3 /* SentiMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SentiMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E987B6551CC6B69200C107E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E987B6571CC6B69200C107E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -201,7 +204,7 @@
 		E916537F1CC77AAE00861DE0 /* Image Files */ = {
 			isa = PBXGroup;
 			children = (
-				E94BFD7C1CD692CA0046B3D4 /* Icon.png */,
+				E94BFD801CD69DF20046B3D4 /* icon@2x.png */,
 				E94BFD7E1CD693090046B3D4 /* launch_screen@2x.png */,
 				E94BFD5E1CD595840046B3D4 /* Map */,
 				E9BF3F251CD29664005A18C5 /* Annotation */,
@@ -260,6 +263,15 @@
 			name = "Search Place";
 			sourceTree = "<group>";
 		};
+		E94BFD821CD6AB280046B3D4 /* First Message */ = {
+			isa = PBXGroup;
+			children = (
+				E94BFD831CD6AB460046B3D4 /* SMFirstMessageViewController.h */,
+				E94BFD841CD6AB460046B3D4 /* SMFirstMessageViewController.m */,
+			);
+			name = "First Message";
+			sourceTree = "<group>";
+		};
 		E987B6481CC6B69200C107E3 = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +299,7 @@
 			children = (
 				E987B6571CC6B69200C107E3 /* AppDelegate.h */,
 				E987B6581CC6B69200C107E3 /* AppDelegate.m */,
+				E94BFD821CD6AB280046B3D4 /* First Message */,
 				E916537D1CC7762D00861DE0 /* Wheel */,
 				E9BF3F0B1CD273BC005A18C5 /* Map Container */,
 				E987B65D1CC6B69200C107E3 /* Main.storyboard */,
@@ -495,7 +508,6 @@
 				E916538C1CC77ACC00861DE0 /* fun@2x.png in Resources */,
 				E916538A1CC77ACC00861DE0 /* angry@2x.png in Resources */,
 				E916538D1CC77ACC00861DE0 /* sad@2x.png in Resources */,
-				E94BFD7D1CD692CA0046B3D4 /* Icon.png in Resources */,
 				E9BF3F241CD2965B005A18C5 /* marker_tired@2x.png in Resources */,
 				E9BF3F231CD2965B005A18C5 /* marker_surprised@2x.png in Resources */,
 				E916538B1CC77ACC00861DE0 /* excited@2x.png in Resources */,
@@ -512,6 +524,7 @@
 				E987B65F1CC6B69200C107E3 /* Main.storyboard in Resources */,
 				E94BFD631CD596010046B3D4 /* plus@2x.png in Resources */,
 				E9BF3F201CD2965B005A18C5 /* marker_joy@2x.png in Resources */,
+				E94BFD811CD69DF20046B3D4 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +601,7 @@
 				E987B6591CC6B69200C107E3 /* AppDelegate.m in Sources */,
 				E916539B1CC7B14B00861DE0 /* SMWheelGestureRecognizer.m in Sources */,
 				E9BF3F0E1CD27463005A18C5 /* SMMapViewController.m in Sources */,
+				E94BFD851CD6AB460046B3D4 /* SMFirstMessageViewController.m in Sources */,
 				E94BFD5D1CD592BE0046B3D4 /* SMSideMenuViewController.m in Sources */,
 				E916537C1CC7761B00861DE0 /* SMWheelViewController.m in Sources */,
 				E94BFD671CD59D2C0046B3D4 /* SMMapContainerViewController.m in Sources */,
