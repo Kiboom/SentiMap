@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "SMMapContainerViewController.h"
 #import "SMWheelGestureRecognizer.h"
 #import "SMTouchUpGestureRecognizer.h"
 #import "SMTouchDownGestureRecognizer.h"
 #import "AFHTTPSessionManager.h"
 
-@interface SMWheelViewController : UIViewController <SMWheelGestureRecognizerDelegate, SMTouchUpGestureRecognizerDelegate, SMTouchDownGestureRecognizerDelegate, CLLocationManagerDelegate>
+@interface SMWheelViewController : UIViewController <CLLocationManagerDelegate>
 
 /* URL request info */
 @property unsigned long long userId;
@@ -44,8 +45,8 @@
 
 /* geographical position */
 @property NSString *city;
-@property double longitude;
 @property double latitude;
+@property double longitude;
 @property CLLocationManager *locationManager;
 
 /* mood */

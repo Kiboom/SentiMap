@@ -15,6 +15,8 @@
 /* initialization */
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self wheelInit];
+    [self doneButtonInit];
     [self moodInfoInit];
     [self gestureRecognizerInit];
     [self locationManagerInit];
@@ -169,11 +171,11 @@
     [self addRepeatAnimationTo:view
                   forKey:@"transform.scale"
                fromValue:@1.0
-                 toValue:@1.04];
+                 toValue:@1.06];
     
     [self addRepeatAnimationTo:view
                   forKey:@"opacity"
-               fromValue:@0.86
+               fromValue:@0.68
                  toValue:@1.0];
 }
 
@@ -298,13 +300,13 @@
     return YES;
 }
 
-/*
  #pragma mark - Navigation
  
- // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
+     SMMapContainerViewController *mapContainer = [segue destinationViewController];
+     mapContainer.mood = _chosenMood.intValue;
+     mapContainer.latitude = _latitude;
+     mapContainer.longitude = _longitude;
  }
- */
+
 @end

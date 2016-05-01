@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <UIKit/UIGestureRecognizerSubclass.h>
 
-@protocol SMWheelGestureRecognizerDelegate <UIGestureRecognizerDelegate>
-@end
-
 @interface SMWheelGestureRecognizer : UIGestureRecognizer
 
 @property SEL action;

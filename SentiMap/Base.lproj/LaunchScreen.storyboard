@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,13 +16,48 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="jcl-lb-ccb">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.062289958979999997" green="0.021605157520000001" blue="0.15588942310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jcl-lb-ccb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6DF-0S-Dz5"/>
+                            <constraint firstItem="jcl-lb-ccb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="AUZ-e6-8xl"/>
+                            <constraint firstItem="jcl-lb-ccb" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="UHj-Jd-geQ"/>
+                            <constraint firstItem="jcl-lb-ccb" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="shv-wE-0Ad"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="jcl-lb-ccb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="6DF-0S-Dz5"/>
+                                <exclude reference="AUZ-e6-8xl"/>
+                                <exclude reference="UHj-Jd-geQ"/>
+                                <exclude reference="shv-wE-0Ad"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="jcl-lb-ccb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="6DF-0S-Dz5"/>
+                                <include reference="AUZ-e6-8xl"/>
+                                <include reference="UHj-Jd-geQ"/>
+                                <include reference="shv-wE-0Ad"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.5" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launch_screen.png" width="360" height="640"/>
+    </resources>
 </document>
