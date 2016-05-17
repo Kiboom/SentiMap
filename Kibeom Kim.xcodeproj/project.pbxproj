@@ -112,7 +112,7 @@
 		E94BFD801CD69DF20046B3D4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		E94BFD831CD6AB460046B3D4 /* SMFirstMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMFirstMessageViewController.h; sourceTree = "<group>"; };
 		E94BFD841CD6AB460046B3D4 /* SMFirstMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMFirstMessageViewController.m; sourceTree = "<group>"; };
-		E987B6511CC6B69200C107E3 /* SentiMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SentiMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E987B6511CC6B69200C107E3 /* Kibeom Kim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kibeom Kim.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E987B6551CC6B69200C107E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E987B6571CC6B69200C107E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E987B6581CC6B69200C107E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -287,7 +287,7 @@
 		E987B6521CC6B69200C107E3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E987B6511CC6B69200C107E3 /* SentiMap.app */,
+				E987B6511CC6B69200C107E3 /* Kibeom Kim.app */,
 				E987B66A1CC6B69200C107E3 /* SentiMapTests.xctest */,
 				E987B6751CC6B69200C107E3 /* SentiMapUITests.xctest */,
 			);
@@ -387,9 +387,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E987B6501CC6B69200C107E3 /* SentiMap */ = {
+		E987B6501CC6B69200C107E3 /* Kibeom Kim */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E987B67E1CC6B69200C107E3 /* Build configuration list for PBXNativeTarget "SentiMap" */;
+			buildConfigurationList = E987B67E1CC6B69200C107E3 /* Build configuration list for PBXNativeTarget "Kibeom Kim" */;
 			buildPhases = (
 				E63BB11BDE3CA9ADE9E0AFDA /* Check Pods Manifest.lock */,
 				E987B64D1CC6B69200C107E3 /* Sources */,
@@ -402,9 +402,9 @@
 			);
 			dependencies = (
 			);
-			name = SentiMap;
+			name = "Kibeom Kim";
 			productName = SentiMap;
-			productReference = E987B6511CC6B69200C107E3 /* SentiMap.app */;
+			productReference = E987B6511CC6B69200C107E3 /* Kibeom Kim.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E987B6691CC6B69200C107E3 /* SentiMapTests */ = {
@@ -471,7 +471,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E987B64C1CC6B69200C107E3 /* Build configuration list for PBXProject "SentiMap" */;
+			buildConfigurationList = E987B64C1CC6B69200C107E3 /* Build configuration list for PBXProject "Kibeom Kim" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -484,7 +484,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E987B6501CC6B69200C107E3 /* SentiMap */,
+				E987B6501CC6B69200C107E3 /* Kibeom Kim */,
 				E987B6691CC6B69200C107E3 /* SentiMapTests */,
 				E987B6741CC6B69200C107E3 /* SentiMapUITests */,
 			);
@@ -634,12 +634,12 @@
 /* Begin PBXTargetDependency section */
 		E987B66C1CC6B69200C107E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E987B6501CC6B69200C107E3 /* SentiMap */;
+			target = E987B6501CC6B69200C107E3 /* Kibeom Kim */;
 			targetProxy = E987B66B1CC6B69200C107E3 /* PBXContainerItemProxy */;
 		};
 		E987B6771CC6B69200C107E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E987B6501CC6B69200C107E3 /* SentiMap */;
+			target = E987B6501CC6B69200C107E3 /* Kibeom Kim */;
 			targetProxy = E987B6761CC6B69200C107E3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -821,7 +821,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E987B64C1CC6B69200C107E3 /* Build configuration list for PBXProject "SentiMap" */ = {
+		E987B64C1CC6B69200C107E3 /* Build configuration list for PBXProject "Kibeom Kim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E987B67C1CC6B69200C107E3 /* Debug */,
@@ -830,7 +830,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E987B67E1CC6B69200C107E3 /* Build configuration list for PBXNativeTarget "SentiMap" */ = {
+		E987B67E1CC6B69200C107E3 /* Build configuration list for PBXNativeTarget "Kibeom Kim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E987B67F1CC6B69200C107E3 /* Debug */,

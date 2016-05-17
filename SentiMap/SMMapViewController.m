@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _serverURL = @"http://52.192.198.85:5000/loadData";
+    _serverURL = @"http://localhost:3000/loadData";
     [self notificationInit];
     [self mapInit];
     [self moodInfoInit];
@@ -128,12 +128,9 @@
 
 
 - (void)fetchJSONDataByTime:(NSString *)time {
-    time = [time componentsSeparatedByString:@"\nAgo"][0];
-    time = [time stringByReplacingOccurrencesOfString:@"\\s"
-                                           withString:@""
-                                              options:NSRegularExpressionSearch
-                                                range:NSMakeRange(0, time.length)];
-    NSString *url = [NSString stringWithFormat:@"http://52.192.198.85:5000/loadData/%@",time];
+    NSLog(@"%lf, %lf",_map.visibleMapRect.origin.x, _map.visibleMapRect.origin.y);
+    NSString *hour = [self timeStringToHour:time];
+    NSString *url = [NSString stringWithFormat:@"%@/%@", _serverURL, hour]; //http://localhost:3000/loadData/{hour}
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:url
       parameters:nil
@@ -153,6 +150,27 @@
 }
 
 
+- (NSString *)timeStringToHour:(NSString *)time {
+    if([time isEqualToString:@"Now"]) {
+        return @"0";
+    }
+    else if([time isEqualToString:@"12 Hours\nAgo"]) {
+        return @"12";
+    }
+    else if([time isEqualToString:@"1 Day\nAgo"]) {
+        return @"24";
+    }
+    else if([time isEqualToString:@"1 Week\nAgo"]) {
+        return @"168";
+    }
+    else if([time isEqualToString:@"1 Month\nAgo"]) {
+        return @"732";
+    }
+    return nil;
+}
+
+
+
 - (void)updateMoods:(NSNotification *)noti{
     NSString *time = (NSString *)noti.userInfo[@"time"];
     [_map removeAnnotations:[_map annotations]];
@@ -161,7 +179,7 @@
 
 
 - (void)setDatas:(NSDictionary *)jsonData {
-    _jsonData = [jsonData objectForKey:@"results"];
+    _jsonData = jsonData;
     _receivedLats = [_jsonData valueForKey:@"lat"];
     _receivedLons = [_jsonData valueForKey:@"lon"];
     _receivedMoods = [_jsonData valueForKey:@"emotion"];

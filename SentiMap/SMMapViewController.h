@@ -24,6 +24,7 @@
 /* moods data */
 @property int mood;
 @property NSDictionary *jsonData;
+@property unsigned long long receivedUserIds;
 @property NSMutableArray *receivedMoods;
 @property NSMutableArray *receivedLats;
 @property NSMutableArray *receivedLons;
