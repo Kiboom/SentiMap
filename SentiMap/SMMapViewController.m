@@ -16,15 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _serverURL = @"http://localhost:3000/loadData";
+    _serverURL = @"http://10.73.43.83:3000/loadData";
     [self notificationInit];
     [self mapInit];
     [self moodInfoInit];
+    NSArray *coordinates = [self getCoordinates:_map.visibleMapRect];
+    [self fetchJSONDataByCoordinates:coordinates];
     [self addAnnotationAtLatitude:_latitude
                        Longtitude:_longitude
                              Mood:_mood
                     JustExpressed:YES];
-    [self fetchJSONData];
     [self searchBarInit];
 }
 
@@ -102,24 +103,35 @@
     [[self navigationController] setNavigationBarHidden:YES];
 }
 
+
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     [_notiCenter postNotificationName:@"search complete" object:nil];
     [self hideSearchBar];
 }
 
-- (void)fetchJSONData {
+
+- (void)fetchJSONDataByCoordinates:(NSArray *)coordinates {
+    
+    NSNumber *startLon = coordinates[0][@"lon"];
+    NSNumber *endLon = coordinates[1][@"lon"];
+    // 만약 longitude가 날짜변경선에 걸쳐 있는 경우, 두 값을 바꿔줘야 함. 안 그러면 70<lon<-175 인 lon을 찾아야 하는 불상사가 생김.
+    if([startLon floatValue] > [endLon floatValue]) {
+        NSNumber *temp = startLon;
+        startLon = endLon;
+        endLon = temp;
+    }
+    NSString *query = [NSString stringWithFormat:@"?startLat=%@&endLat=%@&startLon=%@&endLon=%@", coordinates[1][@"lat"], coordinates[0][@"lat"], startLon, endLon];
+    NSString *url = [_serverURL stringByAppendingString:query];
+    
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:_serverURL
+    [manager GET:url
       parameters:nil
         progress:nil
          success:^(NSURLSessionDataTask *dataTask, NSDictionary *jsonData) {
              [self setDatas:jsonData];
-             for (int i = 0; i<_jsonData.count ; i++) {
-                 [self addAnnotationAtLatitude: [_receivedLats[i] doubleValue]
-                                    Longtitude: [_receivedLons[i] doubleValue]
-                                          Mood: [_receivedMoods[i] intValue]
-                                 JustExpressed:NO];
-             }
+             NSArray<id<MKAnnotation>> *oldAnnotations = [_map annotations];
+             [self drawAnnotations];
+             [_map removeAnnotations:oldAnnotations];
          }
          failure:^(NSURLSessionTask *task, NSError *error) {
              NSLog(@"Error: %@", error);
@@ -135,13 +147,7 @@
       parameters:nil
         progress:nil
          success:^(NSURLSessionDataTask *dataTask, NSDictionary *jsonData) {
-             [self setDatas:jsonData];
-             for (int i = 0; i<_jsonData.count ; i++) {
-                 [self addAnnotationAtLatitude: [_receivedLats[i] doubleValue]
-                                    Longtitude: [_receivedLons[i] doubleValue]
-                                          Mood: [_receivedMoods[i] intValue]
-                                 JustExpressed:NO];
-             }
+             [self drawAnnotations];
          }
          failure:^(NSURLSessionTask *task, NSError *error) {
              NSLog(@"Error: %@", error);
@@ -169,7 +175,6 @@
 }
 
 
-
 - (void)updateMoods:(NSNotification *)noti{
     NSString *time = (NSString *)noti.userInfo[@"time"];
     [_map removeAnnotations:[_map annotations]];
@@ -184,6 +189,15 @@
     _receivedMoods = [_jsonData valueForKey:@"emotion"];
 }
 
+
+- (void)drawAnnotations {
+    for (int i = 0; i<_jsonData.count ; i++) {
+        [self addAnnotationAtLatitude: [_receivedLats[i] floatValue]
+                           Longtitude: [_receivedLons[i] floatValue]
+                                 Mood: [_receivedMoods[i] intValue]
+                        JustExpressed:NO];
+    }
+}
 
 
 - (void)addAnnotationAtLatitude:(double)lat Longtitude:(double)lon Mood:(int)mood JustExpressed:(BOOL)justExpressed{
@@ -233,19 +247,19 @@
 }
 
 
-- (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated {
-    
-    MKMapRect mapRect = _map.visibleMapRect;
-    NSArray *boundingBox = [self getBoundingBox:mapRect];
-    NSLog(@"%@", boundingBox);
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+    NSArray *coordinates = [self getCoordinates:_map.visibleMapRect];
+    NSLog(@"%@", coordinates);
+    _prevCoordinates = coordinates;
+    [self fetchJSONDataByCoordinates:coordinates];
 }
 
 
-- (NSArray *)getBoundingBox:(MKMapRect)mapRect {
-    CLLocationCoordinate2D bottomRight = [self getSECoordinate:mapRect];
+- (NSArray *)getCoordinates:(MKMapRect)mapRect {
     CLLocationCoordinate2D topLeft = [self getNWCoordinate:mapRect];
-    return @[@{@"lat":[NSNumber numberWithDouble:topLeft.latitude], @"lon":[NSNumber numberWithDouble:topLeft.longitude]},
-             @{@"lat":[NSNumber numberWithDouble:bottomRight.latitude], @"lon":[NSNumber numberWithDouble:bottomRight.longitude]}];
+    CLLocationCoordinate2D bottomRight = [self getSECoordinate:mapRect];
+    return @[@{@"lat":[NSNumber numberWithFloat:topLeft.latitude], @"lon":[NSNumber numberWithFloat:topLeft.longitude]},
+             @{@"lat":[NSNumber numberWithFloat:bottomRight.latitude], @"lon":[NSNumber numberWithFloat:bottomRight.longitude]}];
 }
 
 
@@ -255,23 +269,13 @@
 }
 
 
-- (CLLocationCoordinate2D)getSWCoordinate:(MKMapRect)mapRect {
-    return [self getCoordinateFromMapRectPointWithX:mapRect.origin.x Y:MKMapRectGetMaxY(mapRect)];
-}
-
-
-- (CLLocationCoordinate2D)getSECoordinate:(MKMapRect)mapRect {
-    return [self getCoordinateFromMapRectPointWithX:MKMapRectGetMaxX(mapRect) Y:MKMapRectGetMaxY(mapRect)];
-}
-
-
 - (CLLocationCoordinate2D)getNWCoordinate:(MKMapRect)mapRect {
     return [self getCoordinateFromMapRectPointWithX:MKMapRectGetMinX(mapRect) Y:mapRect.origin.y];
 }
 
 
-- (CLLocationCoordinate2D)getNECoordinate:(MKMapRect)mapRect {
-    return [self getCoordinateFromMapRectPointWithX:MKMapRectGetMaxX(mapRect) Y:mapRect.origin.y];
+- (CLLocationCoordinate2D)getSECoordinate:(MKMapRect)mapRect {
+    return [self getCoordinateFromMapRectPointWithX:MKMapRectGetMaxX(mapRect) Y:MKMapRectGetMaxY(mapRect)];
 }
 
 

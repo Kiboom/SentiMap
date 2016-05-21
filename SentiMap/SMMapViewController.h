@@ -33,6 +33,7 @@
 /* map view */
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 @property MKMapView *allAnnotationsMapView;
+@property NSArray<NSNumber *> *prevCoordinates;
 
 /* search */
 @property UISearchController *resultSearchController;
