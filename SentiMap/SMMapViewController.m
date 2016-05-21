@@ -128,7 +128,6 @@
 
 
 - (void)fetchJSONDataByTime:(NSString *)time {
-    NSLog(@"%lf, %lf",_map.visibleMapRect.origin.x, _map.visibleMapRect.origin.y);
     NSString *hour = [self timeStringToHour:time];
     NSString *url = [NSString stringWithFormat:@"%@/%@", _serverURL, hour]; //http://localhost:3000/loadData/{hour}
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -234,15 +233,47 @@
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated {
+    
+    MKMapRect mapRect = _map.visibleMapRect;
+    NSArray *boundingBox = [self getBoundingBox:mapRect];
+    NSLog(@"%@", boundingBox);
 }
-*/
+
+
+- (NSArray *)getBoundingBox:(MKMapRect)mapRect {
+    CLLocationCoordinate2D bottomRight = [self getSECoordinate:mapRect];
+    CLLocationCoordinate2D topLeft = [self getNWCoordinate:mapRect];
+    return @[@{@"lat":[NSNumber numberWithDouble:topLeft.latitude], @"lon":[NSNumber numberWithDouble:topLeft.longitude]},
+             @{@"lat":[NSNumber numberWithDouble:bottomRight.latitude], @"lon":[NSNumber numberWithDouble:bottomRight.longitude]}];
+}
+
+
+- (CLLocationCoordinate2D)getCoordinateFromMapRectPointWithX:(double)x Y:(double)y {
+    MKMapPoint mapPoint = MKMapPointMake(x, y);
+    return MKCoordinateForMapPoint(mapPoint);
+}
+
+
+- (CLLocationCoordinate2D)getSWCoordinate:(MKMapRect)mapRect {
+    return [self getCoordinateFromMapRectPointWithX:mapRect.origin.x Y:MKMapRectGetMaxY(mapRect)];
+}
+
+
+- (CLLocationCoordinate2D)getSECoordinate:(MKMapRect)mapRect {
+    return [self getCoordinateFromMapRectPointWithX:MKMapRectGetMaxX(mapRect) Y:MKMapRectGetMaxY(mapRect)];
+}
+
+
+- (CLLocationCoordinate2D)getNWCoordinate:(MKMapRect)mapRect {
+    return [self getCoordinateFromMapRectPointWithX:MKMapRectGetMinX(mapRect) Y:mapRect.origin.y];
+}
+
+
+- (CLLocationCoordinate2D)getNECoordinate:(MKMapRect)mapRect {
+    return [self getCoordinateFromMapRectPointWithX:MKMapRectGetMaxX(mapRect) Y:mapRect.origin.y];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
