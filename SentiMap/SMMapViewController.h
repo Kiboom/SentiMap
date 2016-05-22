@@ -23,7 +23,7 @@
 
 /* moods data */
 @property int mood;
-@property NSDictionary *jsonData;
+@property NSArray *jsonData;
 @property unsigned long long receivedUserIds;
 @property NSMutableArray *receivedMoods;
 @property NSMutableArray *receivedLats;
@@ -33,7 +33,8 @@
 /* map view */
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 @property MKMapView *allAnnotationsMapView;
-@property NSArray<NSNumber *> *prevCoordinates;
+@property NSDictionary *prevCoordinates;
+@property NSDictionary *curCoordinates;
 
 /* search */
 @property UISearchController *resultSearchController;

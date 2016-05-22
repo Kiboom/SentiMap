@@ -16,19 +16,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _serverURL = @"http://10.73.43.83:3000/loadData";
+    _serverURL = @"http://52.192.198.85:5000/loadData";
+    
     [self notificationInit];
     [self mapInit];
     [self moodInfoInit];
-    NSArray *coordinates = [self getCoordinates:_map.visibleMapRect];
-    [self fetchJSONDataByCoordinates:coordinates];
+    
+    [self coordinatesInit];
+    [self fetchJSONDataByCoordinates];
     [self addAnnotationAtLatitude:_latitude
                        Longtitude:_longitude
                              Mood:_mood
                     JustExpressed:YES];
+    
     [self searchBarInit];
 }
-
 
 
 - (void)mapInit {
@@ -42,7 +44,6 @@
 }
 
 
-
 - (void)moodInfoInit {
     NSDictionary *joy = @{@"num":@1, @"title":@"JOY", @"color":[UIColor colorWithRed:(199/255.f) green:(154/255.f) blue:(23/255.f) alpha:1.0], @"image":[UIImage imageNamed:@"marker_joy"]};
     NSDictionary *tired = @{@"num":@2, @"title":@"TIRED", @"color":[UIColor colorWithRed:(114/255.f) green:(80/255.f) blue:(46/255.f) alpha:1.0], @"image":[UIImage imageNamed:@"marker_tired"]};
@@ -53,6 +54,13 @@
     NSDictionary *sad = @{@"num":@7, @"title":@"SAD", @"color":[UIColor colorWithRed:(79/255.f) green:(111/255.f) blue:(217/255.f)alpha:1.0], @"image":[UIImage imageNamed:@"marker_sad"]};
     NSDictionary *excited = @{@"num":@8, @"title":@"EXCITED", @"color":[UIColor colorWithRed:(90/255.f) green:(212/255.f) blue:(194/255.f)alpha:1.0], @"image":[UIImage imageNamed:@"marker_excited"]};
     _moodInfo = [[NSArray alloc] initWithObjects:joy, tired, fun, angry, surprised, scared, sad, excited, nil];
+}
+
+
+- (void)coordinatesInit {
+    _curCoordinates = @{@"startLat" : @0, @"endLat" : @0, @"startLon" : @0, @"endLon" : @0};
+    [self setCurCoordinatesWithMapRect:_map.visibleMapRect];
+    _prevCoordinates = _curCoordinates;
 }
 
 
@@ -110,28 +118,19 @@
 }
 
 
-- (void)fetchJSONDataByCoordinates:(NSArray *)coordinates {
-    
-    NSNumber *startLon = coordinates[0][@"lon"];
-    NSNumber *endLon = coordinates[1][@"lon"];
-    // 만약 longitude가 날짜변경선에 걸쳐 있는 경우, 두 값을 바꿔줘야 함. 안 그러면 70<lon<-175 인 lon을 찾아야 하는 불상사가 생김.
-    if([startLon floatValue] > [endLon floatValue]) {
-        NSNumber *temp = startLon;
-        startLon = endLon;
-        endLon = temp;
-    }
-    NSString *query = [NSString stringWithFormat:@"?startLat=%@&endLat=%@&startLon=%@&endLon=%@", coordinates[1][@"lat"], coordinates[0][@"lat"], startLon, endLon];
+- (void)fetchJSONDataByCoordinates {
+    NSString *query = [NSString stringWithFormat:@"?startLat=%@&endLat=%@&startLon=%@&endLon=%@", _curCoordinates[@"startLat"], _curCoordinates[@"endLat"], _curCoordinates[@"startLon"], _curCoordinates[@"endLon"]];
     NSString *url = [_serverURL stringByAppendingString:query];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:url
       parameters:nil
         progress:nil
-         success:^(NSURLSessionDataTask *dataTask, NSDictionary *jsonData) {
+         success:^(NSURLSessionDataTask *dataTask, NSArray *jsonData) {
              [self setDatas:jsonData];
-             NSArray<id<MKAnnotation>> *oldAnnotations = [_map annotations];
              [self drawAnnotations];
-             [_map removeAnnotations:oldAnnotations];
+             [self eraseOldAnnotations];
+             _prevCoordinates = _curCoordinates;
          }
          failure:^(NSURLSessionTask *task, NSError *error) {
              NSLog(@"Error: %@", error);
@@ -182,8 +181,20 @@
 }
 
 
-- (void)setDatas:(NSDictionary *)jsonData {
-    _jsonData = jsonData;
+- (void)setDatas:(NSArray *)jsonData {
+    if(jsonData==nil) {
+        return;
+    }
+    
+    NSString *predicateFormat = @"(lat < %@) OR (lat > %@) OR (lon < %@) OR (lon > %@)";
+    if([_prevCoordinates[@"startLon"] floatValue] >=0 && [_prevCoordinates[@"endLon"] floatValue]<=0) {
+        predicateFormat = @"(lat < %@) OR (lat > %@) OR ((lon < %@) AND (lon > %@))";
+    }
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateFormat,
+                                  _prevCoordinates[@"startLat"], _prevCoordinates[@"endLat"],
+                                  _prevCoordinates[@"startLon"], _prevCoordinates[@"endLon"]];
+    _jsonData = [jsonData filteredArrayUsingPredicate:predicate];
     _receivedLats = [_jsonData valueForKey:@"lat"];
     _receivedLons = [_jsonData valueForKey:@"lon"];
     _receivedMoods = [_jsonData valueForKey:@"emotion"];
@@ -196,6 +207,32 @@
                            Longtitude: [_receivedLons[i] floatValue]
                                  Mood: [_receivedMoods[i] intValue]
                         JustExpressed:NO];
+    }
+}
+
+
+- (void)eraseOldAnnotations {
+    NSArray<SMAnnotation *> *annotations = [_map annotations];
+    CGFloat startLat = [(NSNumber *)_curCoordinates[@"startLat"] floatValue];
+    CGFloat endLat = [(NSNumber *)_curCoordinates[@"endLat"] floatValue];
+    CGFloat startLon = [(NSNumber *)_curCoordinates[@"startLon"] floatValue];
+    CGFloat endLon = [(NSNumber *)_curCoordinates[@"endLon"] floatValue];
+    
+    // 지도가 날짜 변경선에 걸쳐있는 경우
+    if(startLon>=0 && endLon <=0) {
+        for(SMAnnotation *annotation in annotations) {
+            if(annotation.coordinate.latitude < startLat || annotation.coordinate.latitude > endLat || (endLon<annotation.coordinate.longitude && annotation.coordinate.longitude<startLon)) {
+                [_map removeAnnotation:annotation];
+            }
+        }
+        return;
+    }
+    
+    // 일반적인 경우
+    for(SMAnnotation *annotation in annotations) {
+        if(annotation.coordinate.latitude < startLat || annotation.coordinate.latitude > endLat || annotation.coordinate.longitude < startLon || annotation.coordinate.longitude > endLon) {
+            [_map removeAnnotation:annotation];
+        }
     }
 }
 
@@ -248,18 +285,27 @@
 
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-    NSArray *coordinates = [self getCoordinates:_map.visibleMapRect];
-    NSLog(@"%@", coordinates);
-    _prevCoordinates = coordinates;
-    [self fetchJSONDataByCoordinates:coordinates];
+    [self setCurCoordinatesWithMapRect:_map.visibleMapRect];
+    NSLog(@"%@", _curCoordinates);
+    [self fetchJSONDataByCoordinates];
 }
 
 
-- (NSArray *)getCoordinates:(MKMapRect)mapRect {
+- (void)setCurCoordinatesWithMapRect:(MKMapRect)mapRect {
     CLLocationCoordinate2D topLeft = [self getNWCoordinate:mapRect];
     CLLocationCoordinate2D bottomRight = [self getSECoordinate:mapRect];
-    return @[@{@"lat":[NSNumber numberWithFloat:topLeft.latitude], @"lon":[NSNumber numberWithFloat:topLeft.longitude]},
-             @{@"lat":[NSNumber numberWithFloat:bottomRight.latitude], @"lon":[NSNumber numberWithFloat:bottomRight.longitude]}];
+    
+    NSNumber *startLat = [NSNumber numberWithFloat:bottomRight.latitude];
+    NSNumber *endLat = [NSNumber numberWithFloat:topLeft.latitude];
+    NSNumber *startLon = [NSNumber numberWithFloat:topLeft.longitude];
+    NSNumber *endLon = [NSNumber numberWithFloat:bottomRight.longitude];
+//    // 만약 longitude가 날짜변경선에 걸쳐 있는 경우, 두 값을 바꿔줘야 함. 안 그러면 70<lon<-175 인 lon을 찾아야 하는 불상사가 생김.
+//    if([startLon floatValue] > [endLon floatValue]) {
+//        NSNumber *temp = startLon;
+//        startLon = endLon;
+//        endLon = temp;
+//    }
+    _curCoordinates = @{@"startLat" : startLat, @"endLat" : endLat, @"startLon" : startLon, @"endLon" : endLon};
 }
 
 
