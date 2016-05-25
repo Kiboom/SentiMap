@@ -1,6 +1,6 @@
 #SentiMap
 ##NOTICE! 
-SentiMap은 원래 NHN NEXT 팀 프로젝트로 만들었던 작품입니다.  
+SentiMap은 원래 팀 프로젝트로 만들었던 작품입니다.  
 이후 개인 프로젝트로 전환하여 이 repository에서 다시 제작하고 있습니다.  
 팀 프로젝트였을 때의 코드 및 회의록을 보시려면 아래 링크를 눌러주세요.  
 https://github.com/NHNNEXT/2015-03-iOS-PatchWork  
