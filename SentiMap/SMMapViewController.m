@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _serverURL = @"http://52.192.198.85:5000/loadData";
+    _serverURL = @"http://localhost:3000/loadData";
     
     [self notificationInit];
     [self mapInit];
@@ -35,7 +35,7 @@
 
 - (void)mapInit {
     [_map setCamera:[MKMapCamera cameraLookingAtCenterCoordinate:CLLocationCoordinate2DMake(_latitude, _longitude)
-                                                    fromDistance:500.0
+                                                    fromDistance:5000.0
                                                            pitch:4
                                                          heading:0]];
     _map.delegate = self;

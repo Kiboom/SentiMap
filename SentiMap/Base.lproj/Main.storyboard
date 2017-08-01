@@ -1,38 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Odin Rounded.otf">
+        <array key="Odin Rounded.otf">
             <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-            <string>OdinRounded</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <scenes>
         <!--Wheel View Controller-->
@@ -44,11 +26,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="i'm in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OV-it-pab">
-                                <rect key="frame" x="259" y="83" width="52" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="i'm in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OV-it-pab">
+                                <rect key="frame" x="104.5" y="107.5" width="45" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="65o-XI-Bkd">
                                         <variation key="widthClass=compact" constant="23"/>
@@ -56,7 +38,7 @@
                                     <constraint firstAttribute="width" constant="45" id="MgE-NR-QfJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="22"/>
-                                <color key="textColor" red="0.3411764705882353" green="0.34509803921568627" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.3411764705882353" green="0.34509803921568627" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -71,8 +53,8 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="and i'm feeling" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCZ-RI-ahr">
-                                <rect key="frame" x="200" y="112" width="111" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and i'm feeling" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCZ-RI-ahr">
+                                <rect key="frame" x="86.5" y="136.5" width="128" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="QOw-ih-RDb"/>
                                     <constraint firstAttribute="height" constant="22" id="Xcr-3J-QrB">
@@ -80,7 +62,7 @@
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="22"/>
-                                <color key="textColor" red="0.3411764705882353" green="0.34509803921568627" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.3411764705882353" green="0.34509803921568627" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -96,7 +78,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ar-CL-rVM" userLabel="city">
-                                <rect key="frame" x="259" y="83" width="52" height="21"/>
+                                <rect key="frame" x="155.5" y="108.5" width="159" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="9sZ-4x-wU1">
                                         <variation key="widthClass=compact" constant="159"/>
@@ -104,7 +86,7 @@
                                     <constraint firstAttribute="height" constant="22" id="HAC-jB-OL0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="22"/>
-                                <color key="textColor" red="0.3411764706" green="0.34509803919999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.3411764706" green="0.34509803919999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -120,7 +102,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uc-Hd-dAm" userLabel="mood">
-                                <rect key="frame" x="200" y="112" width="111" height="21"/>
+                                <rect key="frame" x="220.5" y="137.5" width="105" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="UFo-KK-ZPD"/>
                                     <constraint firstAttribute="width" constant="15" id="Uv4-wH-aQn">
@@ -128,7 +110,7 @@
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="22"/>
-                                <color key="textColor" red="0.3411764706" green="0.34509803919999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.3411764706" green="0.34509803919999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -144,7 +126,7 @@
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0aB-lE-Bfm" userLabel="wheel container">
-                                <rect key="frame" x="0.0" y="146" width="320" height="320"/>
+                                <rect key="frame" x="27.5" y="195.5" width="320" height="320"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wheel.png" translatesAutoresizingMaskIntoConstraints="NO" id="edd-td-mc9" userLabel="wheel">
                                         <rect key="frame" x="35" y="35" width="250" height="250"/>
@@ -177,78 +159,63 @@
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="teo-KT-Om9" userLabel="mood poses">
                                         <rect key="frame" x="3" y="3" width="314" height="314"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JOY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPw-OO-Shq">
                                                 <rect key="frame" x="207" y="27" width="13" height="8"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <variation key="widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="197" y="28" width="40" height="8"/>
-                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SAD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdi-Ka-ode">
                                                 <rect key="frame" x="19" y="102" width="15" height="8"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <variation key="widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="3" y="102" width="40" height="8"/>
-                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ANGRY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="En1-gs-vFL">
                                                 <rect key="frame" x="201" y="283" width="25" height="8"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <variation key="widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="197" y="285" width="40" height="8"/>
-                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SCARED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udo-zq-OmV">
                                                 <rect key="frame" x="6" y="207" width="28" height="8"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <variation key="widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="-5" y="207" width="40" height="8"/>
-                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EXCITED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJW-HN-VX8">
                                                 <rect key="frame" x="83" y="27" width="29" height="8"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <variation key="widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="73" y="28" width="40" height="8"/>
-                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TIRED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sau-YQ-tx8">
                                                 <rect key="frame" x="278" y="102" width="20" height="8"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <variation key="widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="270" y="102" width="40" height="8"/>
-                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FUN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNz-PZ-3LQ">
                                                 <rect key="frame" x="279" y="207" width="14" height="8"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <variation key="widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="270" y="207" width="40" height="8"/>
-                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SURPRISED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqT-Du-rMu">
                                                 <rect key="frame" x="75" y="283" width="37" height="8"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="8"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.54542025859999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <variation key="widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="59" y="285" width="67" height="8"/>
-                                                </variation>
                                             </label>
                                         </subviews>
                                     </view>
@@ -269,36 +236,27 @@
                                     <constraint firstItem="ZxW-wL-kqX" firstAttribute="width" secondItem="1xb-sL-Akk" secondAttribute="width" id="k0M-mz-d7h"/>
                                     <constraint firstItem="edd-td-mc9" firstAttribute="centerY" secondItem="0aB-lE-Bfm" secondAttribute="centerY" id="t9L-US-XLD"/>
                                 </constraints>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="140" y="262" width="320" height="320"/>
-                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tC-sc-cIw" userLabel="done button" customClass="UIButton">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <rect key="frame" x="123.5" y="545.5" width="128" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHv-W2-a6N">
-                                        <rect key="frame" x="132" y="483" width="58" height="35"/>
+                                        <rect key="frame" x="31" y="5" width="66" height="38"/>
                                         <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="23"/>
                                         <state key="normal" title="DONE">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular" misplaced="YES">
-                                            <rect key="frame" x="272" y="590" width="58" height="35"/>
-                                        </variation>
                                         <connections>
                                             <action selector="done:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oI5-Na-H8o"/>
                                             <segue destination="Zi3-Yf-x9J" kind="presentation" id="Voo-hB-2Cy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP0-Cm-fJg">
-                                        <rect key="frame" x="102" y="484" width="30" height="35"/>
+                                        <rect key="frame" x="-1" y="5" width="30" height="38"/>
                                         <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="23"/>
                                         <state key="normal" title="&gt;">
-                                            <color key="titleColor" red="0.90980392160000001" green="0.25490196079999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.90980392160000001" green="0.25490196079999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular" misplaced="YES">
-                                            <rect key="frame" x="242" y="591" width="30" height="35"/>
-                                        </variation>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -351,23 +309,20 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxn-7m-3ID" userLabel="middle guide line">
-                                <rect key="frame" x="160" y="284" width="0.0" height="0.0"/>
+                                <rect key="frame" x="187.5" y="333.5" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="6N9-Fq-yIw"/>
                                     <constraint firstAttribute="height" id="OIe-WO-bmQ"/>
                                 </constraints>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="300" y="400" width="0.0" height="0.0"/>
-                                </variation>
                             </view>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGO-EV-dJg">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="2pK-KJ-wA9" kind="embed" id="3Gd-UC-5Q0"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.047459956702543799" green="0.020028650213668005" blue="0.14178685897435894" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.047459956702543799" green="0.020028650213668005" blue="0.14178685897435894" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2tC-sc-cIw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Jx-2m-tb7"/>
                             <constraint firstItem="fGO-EV-dJg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3i3-lO-oWJ"/>
@@ -494,11 +449,11 @@
                         <viewControllerLayoutGuide type="bottom" id="3jD-pu-5tG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="60m-4Q-0Qz">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeY-gw-dwX" userLabel="Side Menu">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <rect key="frame" x="-4" y="0.0" width="400" height="667"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="248" id="Xco-zl-dnA">
                                         <variation key="widthClass=compact" constant="400"/>
@@ -519,7 +474,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9n-Ig-ApJ">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <rect key="frame" x="-4" y="0.0" width="84" height="667"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="84" id="FFE-y4-bfC"/>
                                 </constraints>
@@ -538,13 +493,13 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRW-Mh-edB" userLabel="Map">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="ft9-kb-4z8" kind="embed" identifier="mapSegue" id="1Qr-JD-joM"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dW7-SP-hqp" userLabel="hamburger">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <rect key="frame" x="29" y="33" width="39" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="EHg-pZ-L6w"/>
                                     <constraint firstAttribute="width" constant="39" id="Jv3-hd-j6g"/>
@@ -567,7 +522,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qv7-yO-hA6" userLabel="plus mood">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <rect key="frame" x="306" y="586" width="47" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="ZzP-YA-j65"/>
                                     <constraint firstAttribute="width" constant="47" id="rgh-HT-qWD"/>
@@ -590,15 +545,15 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="WeY-gw-dwX" secondAttribute="leading" id="412-fO-1KM">
                                 <variation key="widthClass=compact" constant="20"/>
                             </constraint>
                             <constraint firstItem="PRW-Mh-edB" firstAttribute="height" secondItem="60m-4Q-0Qz" secondAttribute="height" id="5vI-jy-rTF"/>
                             <constraint firstItem="WeY-gw-dwX" firstAttribute="height" secondItem="60m-4Q-0Qz" secondAttribute="height" id="AcH-9p-RGh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PRW-Mh-edB" secondAttribute="trailing" constant="-11" id="LNo-mH-23u">
-                                <variation key="widthClass=compact" constant="-20"/>
+                            <constraint firstAttribute="trailing" secondItem="PRW-Mh-edB" secondAttribute="trailing" id="LNo-mH-23u">
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="WeY-gw-dwX" firstAttribute="centerY" secondItem="60m-4Q-0Qz" secondAttribute="centerY" id="QTH-4L-Yv7"/>
                             <constraint firstItem="3jD-pu-5tG" firstAttribute="top" secondItem="qv7-yO-hA6" secondAttribute="bottom" constant="37" id="QUW-77-pcs">
@@ -691,27 +646,25 @@
                         <viewControllerLayoutGuide type="bottom" id="21l-jp-Ro9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sGl-sW-heF">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jmc-to-REX">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="32" y="24" width="22" height="22"/>
-                                </variation>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jmc-to-REX">
+                                <rect key="frame" x="32" y="24" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxA-g0-0hE" userLabel="background">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="248" height="667"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKY-2J-2t9">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <rect key="frame" x="49" y="252.5" width="150" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="HvB-Wn-rUP"/>
                                             <constraint firstAttribute="height" constant="40" id="K8E-Zw-vAQ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="18"/>
                                         <state key="normal" title="SEARCH PLACE">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -730,14 +683,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCe-97-Elt">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <rect key="frame" x="49" y="374.5" width="150" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="mqH-B5-A0t"/>
                                             <constraint firstAttribute="height" constant="40" id="t0X-9b-MXb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="18"/>
                                         <state key="normal" title="ABOUT">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -756,7 +709,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcP-4U-fzw">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <rect key="frame" x="49" y="313.5" width="150" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="Qjq-zQ-mOs">
                                                 <variation key="widthClass=compact" constant="40"/>
@@ -765,7 +718,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="18"/>
                                         <state key="normal" title="TIME MACHINE">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -784,7 +737,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.062289958979999997" green="0.021605157520000001" blue="0.15588942310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.062289958979999997" green="0.021605157520000001" blue="0.15588942310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="vCe-97-Elt" firstAttribute="centerX" secondItem="WxA-g0-0hE" secondAttribute="centerX" id="2CP-9b-SUh"/>
                                     <constraint firstItem="zcP-4U-fzw" firstAttribute="centerX" secondItem="WxA-g0-0hE" secondAttribute="centerX" id="4kC-om-Efp"/>
@@ -828,7 +781,7 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56y-UR-TdM">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <rect key="frame" x="248" y="-0.5" width="152" height="668"/>
                                 <connections>
                                     <action selector="exitSideMenu:" destination="PWU-cf-LXL" eventType="touchUpInside" id="EsT-0g-23M"/>
                                 </connections>
@@ -890,32 +843,32 @@
             <objects>
                 <tableViewController storyboardIdentifier="LocationSearchTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jCg-V8-1A2" customClass="SMLocationSearchTable" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OM8-1r-sPJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="kic-4c-R7c" detailTextLabel="78r-Vb-3ES" style="IBUITableViewCellStyleSubtitle" id="a4r-2n-mba">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a4r-2n-mba" id="qpH-9y-tJz">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kic-4c-R7c">
-                                            <rect key="frame" x="15" y="1" width="34" height="21"/>
+                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78r-Vb-3ES">
-                                            <rect key="frame" x="15" y="22" width="59" height="21"/>
+                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -944,14 +897,14 @@
                         <viewControllerLayoutGuide type="bottom" id="Ka8-FH-kq7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rPi-rm-ocf">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ect-q8-vRB">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ect-q8-vRB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nv5-Af-OfQ" userLabel="current location">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <rect key="frame" x="310" y="33" width="39" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="39" id="vD4-Yy-H79"/>
                                     <constraint firstAttribute="height" constant="39" id="vO9-g2-v5u"/>
@@ -974,7 +927,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ect-q8-vRB" firstAttribute="height" secondItem="rPi-rm-ocf" secondAttribute="height" id="GOR-fl-FiA"/>
                             <constraint firstItem="ect-q8-vRB" firstAttribute="centerY" secondItem="rPi-rm-ocf" secondAttribute="centerY" id="HhP-iH-5sK"/>
@@ -1057,11 +1010,11 @@
                         <viewControllerLayoutGuide type="bottom" id="uRd-y2-kzE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HTc-ri-tZt">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="84" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwn-Sc-Z3o">
-                                <rect key="frame" x="-1" y="50" width="87" height="534"/>
+                                <rect key="frame" x="-1.5" y="66.5" width="87" height="534"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="8X5-Pi-Bln"/>
                                     <constraint firstAttribute="height" constant="534" id="Oku-5o-p1X"/>
@@ -1082,31 +1035,28 @@
                                 </variation>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEN-Nx-u5z">
-                                <rect key="frame" x="13" y="57" width="59" height="26"/>
+                                <rect key="frame" x="20" y="20" width="44" height="26"/>
                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="14"/>
                                 <state key="normal" title="&lt; return">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="17" y="20" width="50" height="29"/>
-                                </variation>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected_time_indicator.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Z0-Qo-c7z">
-                                <rect key="frame" x="355" y="277" width="8" height="16"/>
+                                <rect key="frame" x="75.5" y="325.5" width="8" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="rsj-7g-Doc"/>
                                     <constraint firstAttribute="width" constant="8" id="w2x-vr-tm2"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukg-5w-dLo" userLabel="setting button">
-                                <rect key="frame" x="26" y="49" width="30" height="25"/>
+                                <rect key="frame" x="12.5" y="21" width="59" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="tOU-2L-e6H"/>
                                     <constraint firstAttribute="width" constant="59" id="tkJ-nh-bLS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="10"/>
                                 <state key="normal">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1125,7 +1075,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.062289958979999997" green="0.021605157520000001" blue="0.15588942310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.062289958979999997" green="0.021605157520000001" blue="0.15588942310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pwn-Sc-Z3o" firstAttribute="centerY" secondItem="HTc-ri-tZt" secondAttribute="centerY" id="1Ck-eT-Kfd"/>
                             <constraint firstItem="xEN-Nx-u5z" firstAttribute="centerX" secondItem="HTc-ri-tZt" secondAttribute="centerX" id="869-XG-RiV"/>
@@ -1192,11 +1142,11 @@
                         <viewControllerLayoutGuide type="bottom" id="t2n-0g-lOU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UGZ-zb-paN">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="27" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRq-ua-Gab">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <rect key="frame" x="72.5" y="199.5" width="230" height="105"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="fnp-lq-KOG"/>
                                     <constraint firstAttribute="height" constant="105" id="w4R-1X-XCs"/>
@@ -1204,7 +1154,7 @@
                                 <string key="text">To use SentiMap, 
 it’s important to allow to access your location.</string>
                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="19"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1220,13 +1170,13 @@ it’s important to allow to access your location.</string>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please press ‘Allow’ at the following page :)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="27" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrQ-Hm-fGF">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <rect key="frame" x="55.5" y="300.5" width="264" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="Ces-fB-w17"/>
                                     <constraint firstAttribute="width" constant="264" id="k0D-cQ-F05"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="19"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1242,26 +1192,23 @@ it’s important to allow to access your location.</string>
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcb-aj-fLa" userLabel="done button" customClass="UIButton">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <rect key="frame" x="123.5" y="501.5" width="128" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dv-Vd-MdD">
-                                        <rect key="frame" x="102" y="484" width="30" height="35"/>
+                                        <rect key="frame" x="-1" y="5" width="30" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="ITm-4k-ggG"/>
                                             <constraint firstAttribute="width" constant="30" id="k8w-l2-zjq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="23"/>
                                         <state key="normal" title="&gt;">
-                                            <color key="titleColor" red="0.90980392160000001" green="0.25490196079999999" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.90980392160000001" green="0.25490196079999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="ITm-4k-ggG"/>
                                                 <exclude reference="k8w-l2-zjq"/>
                                             </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular" misplaced="YES">
-                                            <rect key="frame" x="242" y="591" width="30" height="35"/>
                                         </variation>
                                         <variation key="widthClass=compact">
                                             <mask key="constraints">
@@ -1271,14 +1218,11 @@ it’s important to allow to access your location.</string>
                                         </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RA-7i-cbe">
-                                        <rect key="frame" x="132" y="483" width="58" height="35"/>
+                                        <rect key="frame" x="27" y="5" width="78" height="38"/>
                                         <fontDescription key="fontDescription" name="OdinRounded" family="Odin Rounded" pointSize="23"/>
                                         <state key="normal" title="GOT IT!">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular" misplaced="YES">
-                                            <rect key="frame" x="272" y="590" width="58" height="35"/>
-                                        </variation>
                                         <connections>
                                             <action selector="gotIt:" destination="2pK-KJ-wA9" eventType="touchUpInside" id="YPm-NR-owP"/>
                                         </connections>
@@ -1348,7 +1292,7 @@ it’s important to allow to access your location.</string>
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.062289958979999997" green="0.021605157520000001" blue="0.15588942310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.062289958979999997" green="0.021605157520000001" blue="0.15588942310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wcb-aj-fLa" firstAttribute="centerX" secondItem="UGZ-zb-paN" secondAttribute="centerX" id="1Fv-jS-phy"/>
                             <constraint firstItem="wcb-aj-fLa" firstAttribute="centerY" secondItem="UGZ-zb-paN" secondAttribute="centerY" id="HaO-Tq-Nor">

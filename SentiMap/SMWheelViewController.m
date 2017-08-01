@@ -9,6 +9,7 @@
 #import "SMWheelViewController.h"
 
 @interface SMWheelViewController ()
+@property NSString *oldLanguageSetting;
 @end
 
 @implementation SMWheelViewController
@@ -23,6 +24,9 @@
     [self locationManagerInit];
     [self URLRequestInfoInit];
     [self notificationInit];
+    
+    self.oldLanguageSetting = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"en" forKey:@"AppleLanguages"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -30,6 +34,11 @@
     [self wheelInit];
     [self doneButtonInit];
     [self locationManagerStart];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[NSUserDefaults standardUserDefaults] setObject:self.oldLanguageSetting forKey:@"AppleLanguages"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,7 +104,7 @@
 
 - (void)URLRequestInfoInit {
     _userId = 1;
-    _serverURL = @"http://52.192.198.85:5000/insertEmotion";
+    _serverURL = @"http://localhost:3000/insertEmotion";
 }
 
 - (void)notificationInit {

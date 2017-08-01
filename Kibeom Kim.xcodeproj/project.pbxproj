@@ -455,6 +455,7 @@
 				TargetAttributes = {
 					E987B6501CC6B69200C107E3 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 52VP3KS7EY;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -751,6 +752,7 @@
 			baseConfigurationReference = 1116E0B28D16BF4F541233B0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 52VP3KS7EY;
 				INFOPLIST_FILE = SentiMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NHN-NEXT.SentiMap";
@@ -763,6 +765,7 @@
 			baseConfigurationReference = 4E5279B8387C9021C3F1153F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 52VP3KS7EY;
 				INFOPLIST_FILE = SentiMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NHN-NEXT.SentiMap";
