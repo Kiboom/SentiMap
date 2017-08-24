@@ -13,7 +13,8 @@
 @end
 
 @implementation SMWheelViewController
-/* initialization */
+
+#pragma mark - initialization
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self checkFirstVisit];
@@ -113,7 +114,7 @@
 }
 
 
-/* wheel glow */
+#pragma mark - wheel glow
 - (void)didTouchDownGesture:(SMTouchDownGestureRecognizer *)recognizer {
     CGPoint touchPos = [recognizer.touch locationInView:_wheelContainer];
     if([self isMoodPosExposerTouched:touchPos]) {
@@ -143,7 +144,7 @@
 
 
 
-/* wheel rotation */
+#pragma mark - wheel rotation
 - (void)didWheelGesture:(SMWheelGestureRecognizer *)recognizer {
     if([recognizer state] == UIGestureRecognizerStateEnded) {
         return;
@@ -187,7 +188,7 @@
 
 
 
-/* animation */
+#pragma mark - animation
 - (void)addPulseAnimationTo:(UIView *)view {
     [self addRepeatAnimationTo:view
                   forKey:@"transform.scale"
@@ -236,7 +237,7 @@
 
 
 
-/* moodPos button */
+#pragma mark - moodPos button
 - (IBAction)moodPosShow:(UIButton *)sender forEvent:(UIEvent *)event {
     UITouch *touch = [[event touchesForView:sender] anyObject];
     CGPoint touchPos = [touch locationInView:_wheelContainer];
@@ -263,7 +264,7 @@
 
 
 
-/* done button */
+#pragma mark - done button
 - (void)doneButtonEnable {
     [self addFadeAnimationTo:_doneButton duration:0.9 isFadeIn:YES];
     [self addFadeAnimationTo:_doneArrow duration:0.9 isFadeIn:YES];
@@ -282,7 +283,7 @@
 
 
 
-/* location manage */
+#pragma mark - location manage
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     CLLocation *currentLocation = [locations lastObject];
     _latitude = currentLocation.coordinate.latitude;
@@ -296,9 +297,11 @@
                            return;
                        }
                        NSMutableArray *userDefaultLanguages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
-                       [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"en", nil] forKey:@"AppleLanguages"];
+                       [[NSUserDefaults standardUserDefaults] setObject:@[@"en"] forKey:@"AppleLanguages"];
+                       [[NSUserDefaults standardUserDefaults] synchronize];
                        [self updateCityLabelWithPlacemarks:placemarks manager:manager];
                        [[NSUserDefaults standardUserDefaults] setObject:userDefaultLanguages forKey:@"AppleLanguages"];
+                       [[NSUserDefaults standardUserDefaults] synchronize];
                    }];
 }
 
@@ -316,7 +319,7 @@
 
 
 
-/* status bar */
+#pragma mark - status bar
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
@@ -333,7 +336,7 @@
  }
 
 
-/* first message */
+#pragma mark - first message
 - (void)showFirstMessage {
     _firstMessageViewController.hidden = NO;
     [self.view bringSubviewToFront:_firstMessageViewController];

@@ -37,7 +37,7 @@
     float x = touch.x - touchedView.frame.size.width/2;
     float y = -(touch.y - touchedView.frame.size.width/2);
     
-    // to avoid divide by 0
+    // 0으로 나누는 것 방지
     if (y == 0) {
         if (x > 0) {
             return M_PI_2;
@@ -46,19 +46,20 @@
     }
     
     float arctan = atanf(x/y);
-    // x,y is in 1st quadrant
+    
+    // x,y가 1사분면에 있는 경우
     if((x>=0) && (y>0)) {
         return arctan;
     }
-    // x,y is in 2nd quadrant
+    // x,y가 2사분면에 있는 경우
     else if ((x<0) && (y>0)) {
         return arctan + 2 * M_PI;
     }
-    // x,y is in 3rd quadrant
+    // x,y가 3사분면에 있는 경우
     else if ((x<=0) && (y<0)) {
         return arctan + M_PI;
     }
-    // x,y is in 4th quadrant
+    // x,y가 4사분면에 있는 경우
     else if ((x>0) && (y<0)) {
         return arctan + M_PI;
     }

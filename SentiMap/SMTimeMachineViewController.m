@@ -36,6 +36,11 @@
     _chosenTimeInfo = [[NSMutableDictionary alloc] initWithDictionary:@{@"time" : @""}];
 }
 
+- (void)dealloc {
+    [_notiCenter removeObserver:self];
+}
+
+
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;

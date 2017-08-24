@@ -53,6 +53,9 @@
     [self showButtons];
 }
 
+- (void)dealloc {
+    [_notiCenter removeObserver:self];
+}
 
 
 #pragma mark - Navigation

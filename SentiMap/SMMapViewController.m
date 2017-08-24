@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _serverURL = @"http://localhost:3000/loadData";
+    _serverURL = @"http://52.79.198.152:3000/loadData";
     
     [self notificationInit];
     [self mapInit];
@@ -41,6 +41,7 @@
     _map.delegate = self;
     _map.rotateEnabled = NO;
     _allAnnotationsMapView = [[MKMapView alloc] initWithFrame:CGRectZero];
+    
 }
 
 
@@ -99,6 +100,11 @@
                     selector:@selector(updateMoods:)
                         name:@"time selected"
                       object:nil];
+}
+
+
+- (void)dealloc {
+    [_notiCenter removeObserver:self];
 }
 
 
